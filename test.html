@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quanto vi conoscete davvero? — LOVAX</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+<a class="logo" href="index.html">LOVAX</a>
+<nav><a href="index.html">Home</a><a class="active" href="test.html">Test</a><a href="blog.html">Blog</a><a href="contatti.html">Contatti</a></nav>
+</header>
+<main class="test-page">
+<section class="test-intro">
+<span class="eyebrow">TEST LOVAX • 2 MINUTI</span>
+<h1>Quanto vi conoscete davvero?</h1>
+<p>Rispondi pensando al tuo partner. Non esistono risposte giuste o sbagliate: il risultato è uno spunto per riflettere sulla vostra relazione.</p>
+</section>
+
+<form id="loveQuiz">
+<div class="question"><h3>1. Sai qual è il sogno più importante del tuo partner?</h3>
+<label><input type="radio" name="q1" value="3"> Sì, lo conosco bene</label><label><input type="radio" name="q1" value="2"> Ne abbiamo parlato, ma non del tutto</label><label><input type="radio" name="q1" value="1"> Non ne sono sicuro/a</label></div>
+
+<div class="question"><h3>2. Quando il tuo partner ha una giornata difficile, capisci di cosa ha bisogno?</h3>
+<label><input type="radio" name="q2" value="3"> Quasi sempre</label><label><input type="radio" name="q2" value="2"> Dipende</label><label><input type="radio" name="q2" value="1"> Spesso non lo capisco</label></div>
+
+<div class="question"><h3>3. Conosci una cosa che fa sentire davvero amato il tuo partner?</h3>
+<label><input type="radio" name="q3" value="3"> Sì</label><label><input type="radio" name="q3" value="2"> Credo di sì</label><label><input type="radio" name="q3" value="1"> Non saprei</label></div>
+
+<div class="question"><h3>4. Sapresti dire qual è una delle sue paure più grandi?</h3>
+<label><input type="radio" name="q4" value="3"> Sì</label><label><input type="radio" name="q4" value="2"> Forse</label><label><input type="radio" name="q4" value="1"> No</label></div>
+
+<div class="question"><h3>5. Quando avete un problema, riuscite a parlarne senza attaccarvi?</h3>
+<label><input type="radio" name="q5" value="3"> Nella maggior parte dei casi</label><label><input type="radio" name="q5" value="2"> A volte</label><label><input type="radio" name="q5" value="1"> È molto difficile</label></div>
+
+<div class="question"><h3>6. Ricordi qual è stata una delle giornate più belle per il tuo partner?</h3>
+<label><input type="radio" name="q6" value="3"> Sì</label><label><input type="radio" name="q6" value="2"> Ne ricordo diverse</label><label><input type="radio" name="q6" value="1"> Non saprei</label></div>
+
+<div class="question"><h3>7. Il tuo partner sa cosa ti preoccupa in questo periodo?</h3>
+<label><input type="radio" name="q7" value="3"> Sì, ne parliamo</label><label><input type="radio" name="q7" value="2"> In parte</label><label><input type="radio" name="q7" value="1"> Poco</label></div>
+
+<div class="question"><h3>8. Avete almeno un'attività che vi piace fare insieme?</h3>
+<label><input type="radio" name="q8" value="3"> Sì, diverse</label><label><input type="radio" name="q8" value="2"> Una o due</label><label><input type="radio" name="q8" value="1"> Quasi nessuna</label></div>
+
+<div class="question"><h3>9. Quando il partner è silenzioso, riesci a capire quando ha bisogno di spazio?</h3>
+<label><input type="radio" name="q9" value="3"> Sì</label><label><input type="radio" name="q9" value="2"> A volte</label><label><input type="radio" name="q9" value="1"> Difficilmente</label></div>
+
+<div class="question"><h3>10. Quanto senti di conoscere la persona con cui stai?</h3>
+<label><input type="radio" name="q10" value="3"> Moltissimo</label><label><input type="radio" name="q10" value="2"> Abbastanza</label><label><input type="radio" name="q10" value="1"> C'è ancora molto da scoprire</label></div>
+
+<button class="button" type="submit">Scopri il risultato</button>
+</form>
+
+<div id="quizResult" class="result" hidden></div>
+</main>
+<footer><div><strong>LOVAX</strong><br><span>Un test è uno spunto, non una diagnosi.</span></div><div><a href="index.html">Torna alla Home</a></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
