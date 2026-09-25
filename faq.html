@@ -14,18 +14,53 @@
             line-height: 1.6;
         }
         .faq-item {
-            margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
         }
         .faq-question {
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.05em;
             color: #333;
-            margin-bottom: 8px;
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background-color: #fafafa;
+            transition: background-color 0.2s ease;
+        }
+        .faq-question:hover {
+            background-color: #f2f2f2;
+        }
+        /* Icona freccia */
+        .faq-question::after {
+            content: '+';
+            font-size: 1.4em;
+            font-weight: normal;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
         }
         .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
             color: #666;
+            background: #fff;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Altezza massima stimata per la risposta */
+            padding: 15px 20px 20px 20px;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
@@ -74,6 +109,25 @@
         <br>
         <a href="index.html">Torna alla Home</a>
     </footer>
+
+    <!-- Script JavaScript per gestire l'interattività del click -->
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Chiude gli altri aperti (opzionale, se vuoi che se ne apra uno alla volta)
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Apre o chiude quello cliccato
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
