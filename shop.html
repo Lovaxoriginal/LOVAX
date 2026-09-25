@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVAX - Shop & Regali di Coppia</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEZWZ2CWCH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YEZWZ2CWCH');
+    </script>
+    <style>
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #f4f4f4;
+        }
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 1.1rem;
+            color: #b13542;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .buy-btn {
+            display: inline-block;
+            background-color: #b13542;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .buy-btn:hover {
+            background-color: #902a35;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="index.html">LOVAX</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="test.html">Test</a>
+            <a href="blog.html">Blog</a>
+            <a class="active" href="shop.html">Shop & Regali</a>
+            <a href="contatti.html">Contatti</a>
+        </nav>
+    </header>
+
+    <main class="test-page">
+        <section class="test-intro">
+            <span class="eyebrow">IDEE REGALO</span>
+            <h1>Collezione Amore & Bijoux</h1>
+            <p>Sorprendi la persona che ami con un piccolo dettaglio prezioso. Scegli il regalo perfetto per il vostro anniversario o per un momento speciale.</p>
+        </section>
+
+        <!-- Griglia dei prodotti -->
+        <div class="shop-grid">
+            
+            <!-- PRODOTTO 1: Girocollo Cuori e Dettagli Rosa -->
+            <div class="product-card">
+                <img src="girocollo-cuori.jpg" alt="Girocollo con Pendenti a Cuore e Dettagli Rosa">
+                <div class="product-info">
+                    <div>
+                        <div class="product-title">Girocollo con Pendenti a Cuore e Dettagli Rosa</div>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Un raffinato girocollo a catenina impreziosito da delicati cuoricini pendenti e dettagli rosa. Spedizione tracciata inclusa.</p>
+                    </div>
+                    <div>
+                        <div class="product-price">22,99 €</div>
+                        <a href="https://lovax.gumroad.com/l/pqdrf?wanted=true" class="buy-btn" target="_blank">Acquista Ora</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div><strong>LOVAX</strong> - Test, coppia, emozioni e relazioni.</div>
+        <div><a href="index.html">Torna alla Home</a></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
