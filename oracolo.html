@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Oracolo di Coppia - LOVAX</title>
+    <meta name="description" content="Pesca una carta dall'Oracolo di LOVAX: spunti, consigli e domande profonde per la crescita e l'armonia della tua relazione.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf8f5;
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+        }
+        .oracle-main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .cat-btn {
+            background: #fff;
+            border: 1px solid #eae3dc;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #555;
+            transition: all 0.3s;
+        }
+        .cat-btn.active, .cat-btn:hover {
+            background: #2c2c2c;
+            color: #fff;
+            border-color: #2c2c2c;
+        }
+        .cards-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .oracle-card {
+            width: 160px;
+            height: 220px;
+            background: #ffffff;
+            border: 1px solid #eae3dc;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .oracle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: #b89782;
+        }
+        #oracle-result {
+            display: none;
+            background: #ffffff;
+            max-width: 550px;
+            margin: 30px auto;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid #eae3dc;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Menu (Coerente con il tuo sito) -->
+    <header class="site-header" style="background: #fff; padding: 15px 30px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; font-size: 20px; font-weight: bold; color: #2c2c2c; letter-spacing: 2px;">LOVAX</a>
+        </div>
+        <nav class="site-nav">
+            <a href="index.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Home</a>
+            <a href="test.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Test</a>
+            <a href="blog.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Blog</a>
+            <a href="oracolo.html" style="margin-left: 15px; text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 14px;">Oracolo</a>
+            <a href="libri.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Libri</a>
+            <a href="chisiamo.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Chi siamo</a>
+            <a href="faq.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">FAQ</a>
+            <a href="contatti.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Contatti</a>
+        </nav>
+    </header>
+
+    <!-- Contenuto Principale dell'Oracolo -->
+    <main class="oracle-main">
+        <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #b89782; font-weight: 600;">Spazio Interattivo</span>
+        <h1 style="color: #2c2c2c; font-size: 32px; margin-top: 5px; font-weight: 600;">L'Oracolo di Coppia</h1>
+        <p style="color: #666; font-size: 16px; margin-top: 8px; margin-bottom: 30px;">Scegli un mazzo tematico, pesca una carta e lasciati ispirare per migliorare la complicità.</p>
+
+        <!-- Selettore Categorie di Mazzi -->
+        <div class="category-container">
+            <button class="cat-btn active" onclick="changeCategory('comunicazione')">💬 Comunicazione</button>
+            <button class="cat-btn" onclick="changeCategory('intimita')">❤️ Intimità & Connessione</button>
+            <button class="cat-btn" onclick="changeCategory('conflitti')">🕊️ Superare i Conflitti</button>
+        </div>
+
+        <!-- Le 3 Carte -->
+        <!-- Selettore Categorie di Mazzi (Aggiornato con il Futuro) -->
+        <div class="category-container">
+            <button class="cat-btn active" onclick="changeCategory('comunicazione')">💬 Comunicazione</button>
+            <button class="cat-btn" onclick="changeCategory('intimita')">❤️ Intimità</button>
+            <button class="cat-btn" onclick="changeCategory('conflitti')">🕊️ Conflitti</button>
+            <button class="cat-btn" onclick="changeCategory('futuro')">🔮 Futuro & Sogni</button>
+        </div>
+            </div>
+            <div class="oracle-card" onclick="drawCard()">
+                <div style="font-size: 28px; margin-bottom: 10px;" id="card-icon2">✨</div>
+                <span style="color: #2c2c2c; font-weight: 600; font-size: 16px; letter-spacing: 1px;">LOVAX</span>
+                <span style="color: #888; font-size: 12px; margin-top: 15px;">Scegli carta</span>
+            </div>
+            <div class="oracle-card" onclick="drawCard()">
+                <div style="font-size: 28px; margin-bottom: 10px;" id="card-icon3">🕊️</div>
+                <span style="color: #2c2c2c; font-weight: 600; font-size: 16px; letter-spacing: 1px;">LOVAX</span>
+                <span style="color: #888; font-size: 12px; margin-top: 15px;">Scegli carta</span>
+            </div>
+        </div>
+
+        <!-- Risultato -->
+        <div id="oracle-result">
+            <h3 id="result-title" style="color: #2c2c2c; margin-bottom: 12px; font-size: 22px; font-weight: 600;"></h3>
+            <p id="result-text" style="color: #555; font-size: 17px; line-height: 1.6; font-style: italic; margin-bottom: 25px;"></p>
+            <button onclick="resetOracle()" style="background: #2c2c2c; color: #fff; border: none; padding: 10px 22px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500;">Pesca un'altra carta</button>
+        </div>
+    </main>
+
+    <!-- Script della Logica dell'Oracolo -->
+    <script>
+        const deckData = {
+            comunicazione: [
+                { title: "💬 La Carta dell'Ascolto Attivo", text: "Oggi fermatevi 10 minuti senza telefoni. Chiedi al partner: 'Cosa posso fare oggi per alleggerire la tua giornata?'" },
+                { title: "🗣️ La Carta della Condivisione", text: "Raccontaci un sogno o un desiderio che hai nel cassetto e che non hai mai avuto il coraggio di dire ad alta voce." },
+                { title: "✨ La Carta della Domanda Profonda", text: "Qual è stata la volta in cui ti sei sentito/a più amato/a da me nell'ultimo mese?" }
+            ],
+            intimita: [
+                { title: "❤️ La Carta della Gratitudine", text: "Di' al tuo partner una cosa specifica che apprezzi di lui o lei e che spesso dai per scontata nella routine." },
+                { title: "🕯️ La Carta del Tempo Lento", text: "Organizzate una serata senza schermi: solo musica di sottofondo, una tisana o un bicchiere di vino e chiacchiere a cuore aperto." },
+                { title: "🌸 La Carta della Tenerezza", text: "Fai un complimento inaspettato al tuo partner focalizzandoti su un suo tratto interiore o caratteriale." }
+            ],
+            conflitti: [
+                { title: "🕊️ La Carta della Tregua", text: "L'orgoglio è il nemico silenzioso della complicità. Se c'è una piccola tensione in sospeso, fai tu il primo passo oggi." },
+                { title: "🌱 La Carta della Pazienza", text: "Ricorda che nessuno dei due ha bisogno di avere sempre ragione. A volte, scegliere la pace è meglio che vincere una discussione." },
+                { title: "🤝 La Carta del Compromesso", text: "Identificate un piccolo attrito quotidiano e trovate insieme una soluzione pratica che soddisfi entrambi a metà." }
+            ],
+            futuro: [
+                { title: "🔮 La Carta della Visione", text: "Immaginate la vostra vita insieme tra 5 anni: qual è la prima cosa che vedete e che vi fa sorridere?" },
+                { title: "🌟 La Carta del Progetto Segreto", text: "Condividete un grande obiettivo o un viaggio che vorreste assolutamente realizzare insieme prima o poi." },
+                { title: "🌱 La Carta delle Radici", text: "Cosa state costruendo oggi che vi renderà fieri di voi stessi come coppia nel tempo?" }
+            ]
+        };
+        let currentCategory = 'comunicazione';
+
+        function changeCategory(category) {
+            currentCategory = category;
+            // Aggiorna i bottoni attivi
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            resetOracle();
+        }
+
+        function drawCard() {
+            const messages = deckData[currentCategory];
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            
+            document.getElementById('result-title').innerText = randomMsg.title;
+            document.getElementById('result-text').innerText = `"${randomMsg.text}"`;
+            
+            document.getElementById('cards-container').style.display = 'none';
+            document.getElementById('oracle-result').style.display = 'block';
+        }
+
+        function resetOracle() {
+            document.getElementById('oracle-result').style.display = 'none';
+            document.getElementById('cards-container').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
