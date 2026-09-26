@@ -135,220 +135,90 @@
             <h2 id="quiz-title" style="color: #2c2c2c; font-size: 20px; margin-bottom: 15px;"></h2>
             <p id="quiz-question" style="color: #444; font-size: 16px; margin-bottom: 20px; font-weight: 500;"></p>
             <div id="quiz-options" style="display: flex; flex-direction: column; gap: 10px;"></div>
-            <button onclick="backToTests()" style="background: none; border: none; color: #888; cursor: pointer; font-size: 13px; margin-top: 25px;">← Torna a tutti i test</button>
+            <div id="quiz-footer" style="margin-top: 25px;">
+                <button onclick="backToTests()" style="background: none; border: none; color: #888; cursor: pointer; font-size: 13px;">← Torna a tutti i test</button>
+            </div>
         </div>
     </main>
 
-    <!-- Script con 10 domande per test ripulito -->
+    <!-- Script con calcolo del punteggio e risultati dinamici -->
     <script>
         const testData = {
             amore: {
                 title: "💖 Test: I Linguaggi dell'Amore",
                 questions: [
-                    { q: "Quando ti senti giù, cosa ti fa sentire più sollevato/a?", options: [
-                        { text: "Un abbraccio stretto e contatto fisico" },
-                        { text: "Parole di conforto e incoraggiamento" },
-                        { text: "Un aiuto concreto nelle faccende quotidiane" },
-                        { text: "Un regalo o un pensiero inaspettato" }
-                    ]},
-                    { q: "Qual è il modo in cui preferisci dimostrare affetto al partner?", options: [
-                        { text: "Sorprendendolo/a con piccoli doni significativi" },
-                        { text: "Passando tempo di qualità insieme senza distrazioni" },
-                        { text: "Facendolo/a sentire protetto/a con gesti fisici" },
-                        { text: "Dicendogli/le spesso quanto lo/la apprezzo" }
-                    ]},
-                    { q: "Cosa ti ferisce di più in una relazione?", options: [
-                        { text: "Ricevere critiche verbali o insulti" },
-                        { text: "Sentire una distanza fisica o freddezza" },
-                        { text: "Notare disinteresse o mancanza di tempo condiviso" },
-                        { text: "Vedere che il partner non mi supporta nelle difficoltà" }
-                    ]},
-                    { q: "Quale sorpresa gradiresti di più per un anniversario?", options: [
-                        { text: "Un viaggio romantico weekend solo noi due" },
-                        { text: "Un oggetto speciale che desideravo da tempo" },
-                        { text: "Una lettera d'amore profonda scritta a mano" },
-                        { text: "Il partner che si occupa delle incombenze di casa" }
-                    ]},
-                    { q: "Qual è il complimento che ti fa più piacere ricevere?", options: [
-                        { text: "Sei una persona bellissima e affascinante" },
-                        { text: "Stimo enormemente quello che fai e come lo fai" },
-                        { text: "Apprezzo tutto l'impegno che metti per noi" },
-                        { text: "Adoro passare il tempo in tua compagnia" }
-                    ]},
-                    { q: "Come capisci che il tuo partner ti ama profondamente?", options: [
-                        { text: "Da come mi guarda e mi cerca fisicamente" },
-                        { text: "Da ciò che dice e dai suoi incoraggiamenti" },
-                        { text: "Da come organizza il suo tempo per stare con me" },
-                        { text: "Da come mi aiuta quando sono in difficoltà" }
-                    ]},
-                    { q: "Quale di queste mancanze ti pesa di più nella routine?", options: [
-                        { text: "Pochi momenti di intimità e coccole" },
-                        { text: "Poche parole dolci o di stima" },
-                        { text: "Mancanza di attenzioni materiali o pensierini" },
-                        { text: "Poco supporto concreto nelle mansioni quotidiane" }
-                    ]},
-                    { q: "Cosa ti fa sentire più apprezzato/a?", options: [
-                        { text: "Un elogio pubblico o verbale" },
-                        { text: "Un piccolo regalo celebrativo" },
-                        { text: "Un aiuto concreto per alleggerire il carico" },
-                        { text: "Festeggiare insieme dedicandosi una serata speciale" }
-                    ]},
-                    { q: "Qual è il tuo ricordo felice preferito?", options: [
-                        { text: "Un abbraccio intenso dopo una giornata difficile" },
-                        { text: "Una vacanza indimenticabile trascorsa insieme" },
-                        { text: "Una frase stupenda detta dal partner inaspettatamente" },
-                        { text: "Un regalo che desideravo tantissimo ricevuto a sorpresa" }
-                    ]},
-                    { q: "Se dovessi scegliere un pilastro per la coppia, quale sceglieresti?", options: [
-                        { text: "La presenza fisica e la tenerezza costante" },
-                        { text: "Il dialogo aperto e le parole di sostegno" },
-                        { text: "La dedizione reciproca e il tempo condiviso" },
-                        { text: "La concretezza dell'aiutarsi ogni giorno" }
-                    ]}
-                ]
+                    { q: "Quando ti senti giù, cosa ti fa sentire più sollevato/a?", options: [{text: "Un abbraccio stretto e contatto fisico", pts: 3}, {text: "Parole di conforto e incoraggiamento", pts: 2}, {text: "Un aiuto concreto nelle faccende quotidiane", pts: 1}, {text: "Un regalo o un pensiero inaspettato", pts: 1}] },
+                    { q: "Qual è il modo in cui preferisci dimostrare affetto al partner?", options: [{text: "Sorprendendolo/a con piccoli doni significativi", pts: 1}, {text: "Passando tempo di qualità insieme senza distrazioni", pts: 3}, {text: "Facendolo/a sentire protetto/a con gesti fisici", pts: 2}, {text: "Dicendogli/le spesso quanto lo/la apprezzo", pts: 2}] },
+                    { q: "Cosa ti ferisce di più in una relazione?", options: [{text: "Ricevere critiche verbali o insulti", pts: 2}, {text: "Sentire una distanza fisica o freddezza", pts: 3}, {text: "Notare disinteresse o mancanza di tempo condiviso", pts: 2}, {text: "Vedere che il partner non mi supporta nelle difficoltà", pts: 1}] },
+                    { q: "Quale sorpresa gradiresti di più per un anniversario?", options: [{text: "Un viaggio romantico weekend solo noi due", pts: 3}, {text: "Un oggetto speciale che desideravo da tempo", pts: 1}, {text: "Una lettera d'amore profonda scritta a mano", pts: 2}, {text: "Il partner che si occupa delle incombenze di casa", pts: 1}] },
+                    { q: "Qual è il complimento che ti fa più piacere ricevere?", options: [{text: "Sei una persona bellissima e affascinante", pts: 2}, {text: "Stimo enormemente quello che fai e come lo fai", pts: 2}, {text: "Apprezzo tutto l'impegno che metti per noi", pts: 1}, {text: "Adoro passare il tempo in tua compagnia", pts: 3}] },
+                    { q: "Come capisci che il tuo partner ti ama profondamente?", options: [{text: "Da come mi guarda e mi cerca fisicamente", pts: 3}, {text: "Da ciò che dice e dai suoi incoraggiamenti", pts: 2}, {text: "Da come organizza il suo tempo per stare con me", pts: 3}, {text: "Da come mi aiuta quando sono in difficoltà", pts: 1}] },
+                    { q: "Quale di queste mancanze ti pesa di più nella routine?", options: [{text: "Pochi momenti di intimità e coccole", pts: 3}, {text: "Poche parole dolci o di stima", pts: 2}, {text: "Mancanza di attenzioni materiali o pensierini", pts: 1}, {text: "Poco supporto concreto nelle mansioni quotidiane", pts: 1}] },
+                    { q: "Cosa ti fa sentire più apprezzato/a?", options: [{text: "Un elogio pubblico o verbale", pts: 2}, {text: "Un piccolo regalo celebrativo", pts: 1}, {text: "Un aiuto concreto per alleggerire il carico", pts: 1}, {text: "Festeggiare insieme dedicandosi una serata speciale", pts: 3}] },
+                    { q: "Qual è il tuo ricordo felice preferito?", options: [{text: "Un abbraccio intenso dopo una giornata difficile", pts: 3}, {text: "Una vacanza indimenticabile trascorsa insieme", pts: 3}, {text: "Una frase stupenda detta dal partner inaspettatamente", pts: 2}, {text: "Un regalo che desideravo tantissimo ricevuto a sorpresa", pts: 1}] },
+                    { q: "Se dovessi scegliere un pilastro per la coppia, quale sceglieresti?", options: [{text: "La presenza fisica e la tenerezza costante", pts: 3}, {text: "Il dialogo aperto e le parole di sostegno", pts: 2}, {text: "La dedizione reciproca e il tempo condiviso", pts: 3}, {text: "La concretezza dell'aiutarsi ogni giorno", pts: 1}] }
+                ],
+                results: {
+                    high: { title: "💖 Profilo: Amore Intenso e Sensoriale", text: "Per voi l'amore è fatto di presenza fisica, sguardi e tempo di qualità vissuto senza distrazioni. Avete una forte esigenza di vicinanza emotiva e coccole costanti. Il consiglio LOVAX: Pianificate ogni settimana almeno un appuntamento romantico in solitaria per nutrire questa vostra splendida intensità." },
+                    mid: { title: "💖 Profilo: Affetto Equilibrato e Rassicurante", text: "Il vostro modo di vivere l'amore è maturo, basato su attenzioni costanti, parole di stima e piccoli gesti quotidiani. Trovate conforto nella stabilità e nel sostegno reciproco. Il consiglio LOVAX: Continuate a dirvi grazie ogni giorno per non dare mai nulla per scontato." },
+                    low: { title: "💖 Profilo: Amore Pratico e Concreto", text: "Esprimete e percepite l'amore soprattutto attraverso l'impegno concreto, l'aiuto vicendevole e la condivisione di obiettivi pratici. Per voi i fatti contano più delle parole. Il consiglio LOVAX: Ricordatevi ogni tanto di aggiungere un pizzico di romanticismo verbale o fisico inaspettato." }
+                }
             },
             comunicazione: {
                 title: "🗣️ Test: Sintonia & Comunicazione",
                 questions: [
-                    { q: "Quando c'è un disaccordo in casa, come tendi a reagire?", options: [
-                        { text: "Affronto subito il discorso parlandone apertamente" },
-                        { text: "Prendo un po' di tempo per riflettere prima di parlare" },
-                        { text: "Cerco di alleggerire la tensione con un sorriso" },
-                        { text: "Tendo a chiudermi in me stesso/a momentaneamente" }
-                    ]},
-                    { q: "Credi che tu e il tuo partner vi capiate al volo?", options: [
-                        { text: "Sì, spesso ci basta uno sguardo" },
-                        { text: "Abbiamo bisogno di parlare molto per spiegarci" },
-                        { text: "A volte facciamo fatica a sintonizzarci" },
-                        { text: "Spesso fraintendiamo le intenzioni dell'altro" }
-                    ]},
-                    { q: "Come gestite la risoluzione di una discussione accesa?", options: [
-                        { text: "Facciamo pace facendo chiarezza prima di dormire" },
-                        { text: "Lasciamo decantare per qualche ora e poi riproviamo" },
-                        { text: "Spesso trascende e rimane un piccolo amaro in bocca" },
-                        { text: "Evitiamo l'argomento finché passa da solo" }
-                    ]},
-                    { q: "Ti senti libero/a di esprimere qualsiasi opinione al partner?", options: [
-                        { text: "Assolutamente sì, senza filtri né timori" },
-                        { text: "Sì, ma cerco sempre il momento e i modi giusti" },
-                        { text: "A volte temo di ferirlo/a o di scatenare discussioni" },
-                        { text: "Spesso preferisco tacere per quieto vivere" }
-                    ]},
-                    { q: "Ascolti attivamente il partner quando espone un problema?", options: [
-                        { text: "Sì, mi metto nei suoi panni senza interrompere" },
-                        { text: "Ascolto ma tendo subito a dare soluzioni pratiche" },
-                        { text: "A volte mi distraggo o penso a cosa replicare" },
-                        { text: "Fatico a mantenere la pazienza se l'argomento mi annoia" }
-                    ]},
-                    { q: "Quanto parlate dei vostri sentimenti più profondi?", options: [
-                        { text: "Molto spesso, è una nostra abitudine consolidata" },
-                        { text: "Ne parliamo quando sorge una necessità specifica" },
-                        { text: "Raramente, preferiamo concentrarci sulla concretezza" },
-                        { text: "Quasi mai, ci imbarazza o risulta difficile" }
-                    ]},
-                    { q: "Come reagisci alle critiche costruttive del partner?", options: [
-                        { text: "Le accolgo con serenità e cerco di migliorarmi" },
-                        { text: "Inizialmente mi metto sulla difensiva, poi rifletto" },
-                        { text: "Le prendo sul personale e mi rattristo" },
-                        { text: "Le rifiuto e penso che stia esagerando" }
-                    ]},
-                    { q: "Riuscite a mantenere il senso dell'umorismo nei momenti tesi?", options: [
-                        { text: "Sì, una battuta al momento giusto ci salva sempre" },
-                        { text: "A volte sì, se la tensione non è troppo alta" },
-                        { text: "Raramente, quando siamo tesi siamo molto seri" },
-                        { text: "Mai, il nervosismo prende totalmente il sopravvento" }
-                    ]},
-                    { q: "Comunicate chiaramente i vostri bisogni emotivi?", options: [
-                        { text: "Sì, dico apertamente di cosa ho bisogno" },
-                        { text: "Spero sempre che il partner lo capisca da solo" },
-                        { text: "Faccio fatica a chiedere e poi mi lamento" },
-                        { text: "Tengo tutto dentro per non pesare" }
-                    ]},
-                    { q: "Quanto è soddisfacente il vostro dialogo quotidiano?", options: [
-                        { text: "Molto, parliamo di tutto con grande piacere" },
-                        { text: "Buono, anche se la stanchezza a volte frena" },
-                        { text: "Sufficiente, ridotto perlopiù alla gestione pratica" },
-                        { text: "Scarso, avremmo bisogno di ritrovare complicità" }
-                    ]}
-                ]
+                    { q: "Quando c'è un disaccordo in casa, come tendi a reagire?", options: [{text: "Affronto subito il discorso parlandone apertamente", pts: 3}, {text: "Prendo un po' di tempo per riflettere prima di parlare", pts: 2}, {text: "Cerco di alleggerire la tensione con un sorriso", pts: 2}, {text: "Tendo a chiudermi in me stesso/a momentaneamente", pts: 1}] },
+                    { q: "Credi che tu e il tuo partner vi capiate al volo?", options: [{text: "Sì, spesso ci basta uno sguardo", pts: 3}, {text: "Abbiamo bisogno di parlare molto per spiegarci", pts: 2}, {text: "A volte facciamo fatica a sintonizzarci", pts: 1}, {text: "Spesso fraintendiamo le intenzioni dell'altro", pts: 1}] },
+                    { q: "Come gestite la risoluzione di una discussione accesa?", options: [{text: "Facciamo pace facendo chiarezza prima di dormire", pts: 3}, {text: "Lasciamo decantare per qualche ora e poi riproviamo", pts: 2}, {text: "Spesso trascende e rimane un piccolo amaro in bocca", pts: 1}, {text: "Evitiamo l'argomento finché passa da solo", pts: 1}] },
+                    { q: "Ti senti libero/a di esprimere qualsiasi opinione al partner?", options: [{text: "Assolutamente sì, senza filtri né timori", pts: 3}, {text: "Sì, ma cerco sempre il momento e i modi giusti", pts: 2}, {text: "A volte temo di ferirlo/a o di scatenare discussioni", pts: 1}, {text: "Spesso preferisco tacere per quieto vivere", pts: 1}] },
+                    { q: "Ascolti attivamente il partner quando espone un problema?", options: [{text: "Sì, mi metto nei suoi panni senza interrompere", pts: 3}, {text: "Ascolto ma tendo subito a dare soluzioni pratiche", pts: 2}, {text: "A volte mi distraggo o penso a cosa replicare", pts: 1}, {text: "Fatico a mantenere la pazienza se l'argomento mi annoia", pts: 1}] },
+                    { q: "Quanto parlate dei vostri sentimenti più profondi?", options: [{text: "Molto spesso, è una nostra abitudine consolidata", pts: 3}, {text: "Ne parliamo quando sorge una necessità specifica", pts: 2}, {text: "Raramente, preferiamo concentrarci sulla concretezza", pts: 1}, {text: "Quasi mai, ci imbarazza o risulta difficile", pts: 1}] },
+                    { q: "Come reagisci alle critiche costruttive del partner?", options: [{text: "Le accolgo con serenità e cerco di migliorarmi", pts: 3}, {text: "Inizialmente mi metto sulla difensiva, poi rifletto", pts: 2}, {text: "Le prendo sul personale e mi rattristo", pts: 1}, {text: "Le rifiuto e penso che stia esagerando", pts: 1}] },
+                    { q: "Riuscite a mantenere il senso dell'umorismo nei momenti tesi?", options: [{text: "Sì, una battuta al momento giusto ci salva sempre", pts: 3}, {text: "A volte sì, se la tensione non è troppo alta", pts: 2}, {text: "Raramente, quando siamo tesi siamo molto seri", pts: 1}, {text: "Mai, il nervosismo prende totalmente il sopravvento", pts: 1}] },
+                    { q: "Comunicate chiaramente i vostri bisogni emotivi?", options: [{text: "Sì, dico apertamente di cosa ho bisogno", pts: 3}, {text: "Spero sempre che il partner lo capisca da solo", pts: 1}, {text: "Faccio fatica a chiedere e poi mi lamento", pts: 1}, {text: "Tengo tutto dentro per non pesare", pts: 1}] },
+                    { q: "Quanto è soddisfacente il vostro dialogo quotidiano?", options: [{text: "Molto, parliamo di tutto con grande piacere", pts: 3}, {text: "Buono, anche se la stanchezza a volte frena", pts: 2}, {text: "Sufficiente, ridotto perlopiù alla gestione pratica", pts: 1}, {text: "Scarso, avremmo bisogno di ritrovare complicità", pts: 1}] }
+                ],
+                results: {
+                    high: { title: "🗣️ Profilo: Sintonia e Dialogo Eccellenti", text: "La vostra comunicazione è aperta, matura e costruttiva. Riuscite ad affrontare i problemi senza chiudervi e ad ascoltarvi con empatia profonda. Il consiglio LOVAX: Mantenete questa bellissima abitudine di confrontarvi regolarmente, siete un punto di riferimento l'uno per l'altra." },
+                    mid: { title: "🗣️ Profilo: Comunicazione in Buona Evoluzione", text: "Il dialogo tra voi è buono, anche se la stanchezza o la routine quotidiana a volte creano piccoli fraintendimenti o silenzi temporanei. Il consiglio LOVAX: Ritagliatevi 10 minuti la sera senza schermi per raccontarvi la giornata a cuore aperto." },
+                    low: { title: "🗣️ Profilo: Bisogno di Riscoprire il Dialogo", text: "Emerge la tendenza a tenervi dentro le cose o a comunicare solo per questioni pratiche, rischiando di accumulare piccoli attriti irrisolti. Il consiglio LOVAX: Provate a fare il primo passo oggi stesso aprendo un dialogo sincero e senza giudizio su ciò che vi pesa." }
+                }
             },
             futuro: {
                 title: "🔮 Test: Futuro & Obiettivi",
                 questions: [
-                    { q: "Qual è la priorità principale per la vostra coppia nei prossimi 2 anni?", options: [
-                        { text: "Viaggiare e fare nuove esperienze insieme" },
-                        { text: "Costruire stabilità (casa, progetti lavorativi)" },
-                        { text: "Coltivare il tempo di qualità e la connessione emotiva" },
-                        { text: "Realizzare traguardi professionali o di crescita" }
-                    ]},
-                    { q: "Come immaginate i vostri weekend ideali tra qualche anno?", options: [
-                        { text: "In giro per il mondo a scoprire posti nuovi" },
-                        { text: "Tranquilli nella nostra casa curata nei dettagli" },
-                        { text: "Dediti alle passioni condivise e agli affetti" },
-                        { text: "Impegnati in progetti creativi o formativi" }
-                    ]},
-                    { q: "Come affrontate insieme i grandi cambiamenti di vita?", options: [
-                        { text: "Con entusiasmo ed eccitazione per la novità" },
-                        { text: "Pianificando tutto con cura per minimizzare i rischi" },
-                        { text: "Sostenendoci emotivamente passo dopo passo" },
-                        { text: "Vedendoli come opportunità di successo personale" }
-                    ]},
-                    { q: "Quale sogno nel cassetto vorreste realizzare per primo?", options: [
-                        { text: "Un viaggio epico intorno al mondo" },
-                        { text: "Acquistare o ristrutturare la casa dei sogni" },
-                        { text: "Creare una famiglia o consolidare il nostro nido" },
-                        { text: "Avviare un progetto ambizioso o un'attività nostra" }
-                    ]},
-                    { q: "Cosa vi spaventa di più pensando al futuro della relazione?", options: [
-                        { text: "La noia e la caduta nella routine grigia" },
-                        { text: "L'instabilità economica o lavorativa" },
-                        { text: "La perdita di sintonia emotiva e vicinanza" },
-                        { text: "Il blocco della crescita personale o professionale" }
-                    ]},
-                    { q: "Quanto parlate dei vostri progetti a lungo termine?", options: [
-                        { text: "Continuamente, abbiamo una visione chiara e condivisa" },
-                        { text: "Ne parliamo spesso e ci aggiorniamo regolarmente" },
-                        { text: "Viviamo molto alla giornata senza programmare troppo" },
-                        { text: "Raramente, abbiamo visioni un po' differenti" }
-                    ]},
-                    { q: "Qual è il vostro rapporto con il risparmio e gli investimenti?", options: [
-                        { text: "Spendiamo volentieri per esperienze e viaggi" },
-                        { text: "Siamo molto previdenti e miriamo a solide basi" },
-                        { text: "Ci basta il giusto per vivere sereni e goderci il tempo" },
-                        { text: "Investiamo molto sulla formazione e sul futuro" }
-                    ]},
-                    { q: "Come vi vedete invecchiare insieme?", options: [
-                        { text: "Sempre in movimento, girando il mondo" },
-                        { text: "In una splendida casa con radici e stabilità" },
-                        { text: "Sempre uniti, mano nella mano, complici" },
-                        { text: "Realizzati, con una vita ricca di soddisfazioni" }
-                    ]},
-                    { q: "Quanto ritenete importanti gli obiettivi condivisi nella coppia?", options: [
-                        { text: "Fondamentali per dare brio ed entusiasmo alla vita" },
-                        { text: "Essenziali per avere sicurezza e tranquillità" },
-                        { text: "Importanti, ma la priorità è il benessere emotivo" },
-                        { text: "Cruciali per spingersi a vicenda verso il meglio" }
-                    ]},
-                    { q: "Qual è il vostro livello di sintonia sui progetti futuri?", options: [
-                        { text: "Perfetta sintonia: remiamo nella stessa direzione" },
-                        { text: "Ottima sintonia, con piccoli dettagli da accordare" },
-                        { text: "Discreta, ma ci stiamo lavorando per capirci meglio" },
-                        { text: "In fase di costruzione, visioni da conciliare" }
-                    ]}
-                ]
+                    { q: "Qual è la priorità principale per la vostra coppia nei prossimi 2 anni?", options: [{text: "Viaggiare e fare nuove esperienze insieme", pts: 3}, {text: "Costruire stabilità (casa, progetti lavorativi)", pts: 2}, {text: "Coltivare il tempo di qualità e la connessione emotiva", pts: 3}, {text: "Realizzare traguardi professionali o di crescita", pts: 2}] },
+                    { q: "Come immaginate i vostri weekend ideali tra qualche anno?", options: [{text: "In giro per il mondo a scoprire posti nuovi", pts: 3}, {text: "Tranquilli nella nostra casa curata nei dettagli", pts: 2}, {text: "Dediti alle passioni condivise e agli affetti", pts: 3}, {text: "Impegnati in progetti creativi o formativi", pts: 2}] },
+                    { q: "Come affrontate insieme i grandi cambiamenti di vita?", options: [{text: "Con entusiasmo ed eccitazione per la novità", pts: 3}, {text: "Pianificando tutto con cura per minimizzare i rischi", pts: 2}, {text: "Sostenendoci emotivamente passo dopo passo", pts: 3}, {text: "Vedendoli come opportunità di successo personale", pts: 2}] },
+                    { q: "Quale sogno nel cassetto vorreste realizzare per primo?", options: [{text: "Un viaggio epico intorno al mondo", pts: 3}, {text: "Acquistare o ristrutturare la casa dei sogni", pts: 2}, {text: "Creare una famiglia o consolidare il nostro nido", pts: 3}, {text: "Avviare un progetto ambizioso o un'attività nostra", pts: 2}] },
+                    { q: "Cosa vi spaventa di più pensando al futuro della relazione?", options: [{text: "La noia e la caduta nella routine grigia", pts: 2}, {text: "L'instabilità economica o lavorativa", pts: 1}, {text: "La perdita di sintonia emotiva e vicinanza", pts: 3}, {text: "Il blocco della crescita personale o professionale", pts: 2}] },
+                    { q: "Quanto parlate dei vostri progetti a lungo termine?", options: [{text: "Continuamente, abbiamo una visione chiara e condivisa", pts: 3}, {text: "Ne parliamo spesso e ci aggiorniamo regolarmente", pts: 2}, {text: "Viviamo molto alla giornata senza programmare troppo", pts: 1}, {text: "Raramente, abbiamo visioni un po' differenti", pts: 1}] },
+                    { q: "Qual è il vostro rapporto con il risparmio e gli investimenti?", options: [{text: "Spendiamo volentieri per esperienze e viaggi", pts: 3}, {text: "Siamo molto previdenti e miriamo a solide basi", pts: 2}, {text: "Ci basta il giusto per vivere sereni e goderci il tempo", pts: 2}, {text: "Investiamo molto sulla formazione e sul futuro", pts: 2}] },
+                    { q: "Come vi vedete invecchiare insieme?", options: [{text: "Sempre in movimento, girando il mondo", pts: 3}, {text: "In una splendida casa con radici e stabilità", pts: 2}, {text: "Sempre uniti, mano nella mano, complici", pts: 3}, {text: "Realizzati, con una vita ricca di soddisfazioni", pts: 2}] },
+                    { q: "Quanto ritenete importanti gli obiettivi condivisi nella coppia?", options: [{text: "Fondamentali per dare brio ed entusiasmo alla vita", pts: 3}, {text: "Essenziali per avere sicurezza e tranquillità", pts: 2}, {text: "Importanti, ma la priorità è il benessere emotivo", pts: 3}, {text: "Cruciali per spingersi a vicenda verso il meglio", pts: 2}] },
+                    { q: "Qual è il vostro livello di sintonia sui progetti futuri?", options: [{text: "Perfetta sintonia: remiamo nella stessa direzione", pts: 3}, {text: "Ottima sintonia, con piccoli dettagli da accordare", pts: 2}, {text: "Discreta, ma ci stiamo lavorando per capirci meglio", pts: 1}, {text: "In fase di costruzione, visioni da conciliare", pts: 1}] }
+                ],
+                results: {
+                    high: { title: "🔮 Profilo: Sguardi Rivolti all'Orizzonte", text: "Avete una visione del futuro straordinariamente allineata, ricca di sogni condivisi, progetti entusiasmanti e voglia di costruire insieme. Il consiglio LOVAX: Mettete nero su bianco il vostro prossimo grande obiettivo e iniziate a pianificare i primi passi concreti per realizzarlo." },
+                    mid: { title: "🔮 Profilo: Progetti in Sviluppo e Crescita", text: "Condividete una buona base di valori e desideri, pur mantenendo ognuno i propri spazi di crescita personale. C'è grande armonia con qualche dettaglio da accordare. Il consiglio LOVAX: Dedicate un weekend a immaginare i vostri prossimi 5 anni per sincronizzare ancora di più i sogni." },
+                    low: { title: "🔮 Profilo: Esploratori del Presente", text: "Vivete molto il momento presente e potreste avere visioni del futuro o priorità temporali leggermente differenti che richiedono maggiore dialogo. Il consiglio LOVAX: Scoprite quali sono i desideri nascosti del vostro partner per trovare un nuovo punto d'incontro comune." }
+                }
             }
         };
 
         let currentTestKey = '';
         let currentQuestionIndex = 0;
+        let totalScore = 0;
 
         function startTest(testKey) {
             currentTestKey = testKey;
             currentQuestionIndex = 0;
-            loadQuestion();
+            totalScore = 0;
             
             document.getElementById('tests-list').style.display = 'none';
             document.getElementById('quiz-container').style.display = 'block';
+            
+            loadQuestion();
         }
 
         function loadQuestion() {
@@ -378,12 +248,13 @@
                 btn.onmouseover = () => btn.style.background = '#eae3dc';
                 btn.onmouseout = () => btn.style.background = '#faf8f5';
                 
-                btn.onclick = () => handleAnswer();
+                btn.onclick = () => handleAnswer(opt.pts);
                 optionsContainer.appendChild(btn);
             });
         }
 
-        function handleAnswer() {
+        function handleAnswer(pts) {
+            totalScore += pts;
             const test = testData[currentTestKey];
             currentQuestionIndex++;
             
@@ -395,18 +266,28 @@
         }
 
         function showResult() {
-            const container = document.getElementById('quiz-container');
-            container.innerHTML = `
-                <div style="font-size: 12px; color: #b89782; font-weight: 600; margin-bottom: 8px; text-transform: uppercase;">Test Completato con Successo</div>
-                <h3 style="color: #2c2c2c; margin-bottom: 15px; font-size: 22px;">Complimenti per aver completato il percorso!</h3>
-                <p style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">Avete risposto a tutte le 10 domande esplorando questo tema profondo. Condividete le vostre risposte e le vostre impressioni con il partner per rafforzare ulteriormente la vostra complicità!</p>
-                <button onclick="backToTests()" class="test-btn" style="margin-top: 0;">Torna a tutti i test</button>
-            `;
+            const test = testData[currentTestKey];
+            let outcome;
+            
+            // Logica di assegnazione del profilo in base al punteggio totale (max 30 punti)
+            if (totalScore >= 24) {
+                outcome = test.results.high;
+            } else if (totalScore >= 17) {
+                outcome = test.results.mid;
+            } else {
+                outcome = test.results.low;
+            }
+
+            document.getElementById('quiz-step').innerText = "Test Completato con Successo";
+            document.getElementById('quiz-title').innerText = outcome.title;
+            document.getElementById('quiz-question').innerText = outcome.text;
+            document.getElementById('quiz-options').innerHTML = '';
         }
 
         function backToTests() {
             currentQuestionIndex = 0;
             currentTestKey = '';
+            totalScore = 0;
             document.getElementById('quiz-container').style.display = 'none';
             document.getElementById('tests-list').style.display = 'grid';
         }
