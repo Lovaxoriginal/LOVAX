@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Giochi & Ruota del Date Night - LOVAX</title>
+    <meta name="description" content="Scopri idee originali per le vostre serate di coppia e divertiti con i mini-giochi interattivi di LOVAX.">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf8f5;
+            color: #2c2c2c;
+            box-sizing: border-box;
+        }
+        .main-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        /* Griglia dei Mini-Giochi */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .game-card {
+            background: #ffffff;
+            border: 1px solid #eae3dc;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: #b89782;
+        }
+        .game-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .game-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        .game-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .game-btn {
+            background: #2c2c2c;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .game-btn:hover {
+            background: #b89782;
+        }
+        /* Sezione Interattiva della Ruota */
+        .wheel-section {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        .wheel-result {
+            font-size: 24px;
+            font-weight: 700;
+            color: #b89782;
+            margin: 25px 0;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px dashed rgba(184, 151, 130, 0.4);
+        }
+        .wheel-btn {
+            background: #b89782;
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .wheel-btn:hover {
+            background: #c8a792;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Menu Unificato -->
+    <header class="site-header" style="background: #fff; padding: 15px 40px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="./logo-lovax.jpg" alt="Logo LOVAX" style="width: 36px; height: 36px; object-fit: cover; border-radius: 50%;">
+            <a href="index.html" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #2c2c2c; letter-spacing: 2px;">LOVAX</a>
+        </div>
+        <nav class="site-nav" style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <a href="index.html" style="text-decoration: none; color: #666; font-size: 15px;">Home</a>
+            <a href="test.html" style="text-decoration: none; color: #666; font-size: 15px;">Test</a>
+            <a href="rubrica.html" style="text-decoration: none; color: #666; font-size: 15px;">Rubrica</a>
+            <a href="minigiochi.html" style="text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 15px;">Mini-Giochi</a>
+            <a href="blog.html" style="text-decoration: none; color: #666; font-size: 15px;">Blog</a>
+            <a href="oracolo.html" style="text-decoration: none; color: #666; font-size: 15px;">Oracolo</a>
+            <a href="libri.html" style="text-decoration: none; color: #666; font-size: 15px;">Libri</a>
+            <a href="shop.html" style="text-decoration: none; color: #666; font-size: 15px;">Shop</a>
+            <a href="chisiamo.html" style="text-decoration: none; color: #666; font-size: 15px;">Chi siamo</a>
+            <a href="faq.html" style="text-decoration: none; color: #666; font-size: 15px;">FAQ</a>
+            <a href="contatti.html" style="text-decoration: none; color: #666; font-size: 15px;">Contatti</a>
+        </nav>
+    </header>
+
+    <!-- Contenuto Pagina Mini-Giochi -->
+    <main class="main-container">
+        
+        <div class="page-header">
+            <h1>Area Mini-Giochi & Attività di Coppia</h1>
+            <p>Rompete la routine quotidiana con idee creative, sfide leggere e momenti di pura complicità.</p>
+        </div>
+
+        <!-- Ruota Interattiva del Date Night -->
+        <div class="wheel-section">
+            <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #b89782; font-weight: bold;">🎡 Generatore di Serate</span>
+            <h2 style="font-size: 26px; margin: 10px 0 5px 0;">La Ruota del Date Night</h2>
+            <p style="color: #bbb; font-size: 14px; margin-bottom: 20px;">Non sapete mai cosa fare la sera? Cliccate per estrarre l'appuntamento perfetto!</p>
+            
+            <div class="wheel-result" id="dateResult">
+                "Clicca il pulsante sotto per scoprire cosa fare stasera!"
+            </div>
+            
+            <button class="wheel-btn" onclick="giraRuota()">Gira la Ruota dell'Appuntamentento 🎯</button>
+        </div>
+
+        <!-- Altri Mini-Giochi -->
+        <div style="margin-top: 50px;">
+            <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 25px; border-left: 4px solid #b89782; padding-left: 12px;">Altre Dinamiche di Coppia</h3>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <div>
+                        <div class="game-icon">🔥</div>
+                        <h3 class="game-title">Verità o Profondità</h3>
+                        <p class="game-desc">Domande stuzzicanti e introspettive per scoprire segreti e desideri nascosti del partner.</p>
+                    </div>
+                    <button class="game-btn" onclick="estraiVerita()">Estrai Domanda</button>
+                </div>
+
+                <div class="game-card">
+                    <div>
+                        <div class="game-icon">🏆</div>
+                        <h3 class="game-title">La Sfida dei 3 Secondi</h3>
+                        <p class="game-desc">Un gioco rapido in cui bisogna nominare 3 cose che piacciono all'altro prima dello scadere del tempo!</p>
+                    </div>
+                    <button class="game-btn" onclick="estraiSfida()">Estrai Sfida</button>
+                </div>
+
+                <div class="game-card">
+                    <div>
+                        <div class="game-icon">💌</div>
+                        <h3 class="game-title">Il Coupon dei Desideri</h3>
+                        <p class="game-desc">Estrai un favore speciale o un'attenzioni romantica da regalare al partner oggi stesso.</p>
+                    </div>
+                    <button class="game-btn" onclick="estraiCoupon()">Estrai Coupon</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script JavaScript per i giochi -->
+    <script>
+        const dateIdeas = [
+            "Cena a lume di candela in casa cucinando insieme bendati o con una mano sola!",
+            "Maratona di film romantici sul divano con pigiama coordinato e cioccolata calda.",
+            "Passeggiata notturna senza cellulari parlando dei vostri sogni futuri.",
+            "Serata 'Aperitivo Retrò': ascoltate la musica degli anni in cui vi siete conosciuti.",
+            "Costruite una fortezza di cuscini in salotto e fate un picnic sul pavimento.",
+            "Caccia al tesoro in casa: nascondi un piccolo biglietto d'amore per il partner."
+        ];
+
+        const veritaList = [
+            "Qual è il difetto che trovi più buffo e tenero in me?",
+            "Qual è stato il momento in cui hai capito che mi amavi davvero?",
+            "Se potessi farmi un regalo senza limiti di budget, cosa sceglieresti?",
+            "Qual è la cosa più pazza che faresti per amore?"
+        ];
+
+        const sfideList = [
+            "Nomina 3 cose che mangerei ogni giorno volentieri!",
+            "Imita l'espressione che faccio quando sono concentrato/a al massimo!",
+            "Balla con me un lento per 60 secondi senza musica!",
+            "Fai un complimento al partner usando una voce buffa!"
+        ];
+
+        const couponList = [
+            "🎟️ Coupon: Un massaggio rilassante di 15 minuti senza repliche!",
+            "🎟️ Coupon: Scegli tu il film per la prossima serata cinema!",
+            "🎟️ Coupon: Colazione a letto servita con cura domattina!",
+            "🎟️ Coupon: Diritto di veto assoluto sulle faccende domestiche per un giorno intero!"
+        ];
+
+        function giraRuota() {
+            const resultBox = document.getElementById('dateResult');
+            resultBox.innerHTML = "🌀 Girando la ruota...";
+            setTimeout(() => {
+                const rand = Math.floor(Math.random() * dateIdeas.length);
+                resultBox.innerHTML = '" ' + dateIdeas[rand] + ' "';
+            }, 500);
+        }
+
+        function estraiVerita() {
+            const rand = Math.floor(Math.random() * veritaList.length);
+            alert("✨ Verità:\n\n" + veritaList[rand]);
+        }
+
+        function estraiSfida() {
+            const rand = Math.floor(Math.random() * sfideList.length);
+            alert("🏆 Sfida:\n\n" + sfideList[rand]);
+        }
+
+        function estraiCoupon() {
+            const rand = Math.floor(Math.random() * couponList.length);
+            alert("🎁 Il tuo Coupon:\n\n" + couponList[rand]);
+        }
+    </script>
+
+</body>
+</html>
