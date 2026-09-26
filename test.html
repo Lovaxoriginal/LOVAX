@@ -1,79 +1,240 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YEZWZ2CWCH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YEZWZ2CWCH');
-</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quanto vi conoscete davvero? — LOVAX</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test di Coppia - LOVAX</title>
+    <meta name="description" content="Scopri i test interattivi di LOVAX per esplorare la complicità, i linguaggi dell'amore e l'affinità di coppia.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf8f5;
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+        }
+        .test-main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .tests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .test-card {
+            background: #ffffff;
+            border: 1px solid #eae3dc;
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: #b89782;
+        }
+        .test-btn {
+            background: #2c2c2c;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .test-btn:hover {
+            background: #b89782;
+        }
+        #quiz-container {
+            display: none;
+            background: #ffffff;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid #eae3dc;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-  <a class="logo" href="index.html">LOVAX</a>
-  <nav class="site-nav">
-    <a href="index.html">Home</a>
-    <a href="test.html">Test</a>
-    <li><a href="oracolo.html">Oracolo</a></li>
-    <a href="blog.html">Blog</a>
-    <a href="shop.html">Shop & Regali</a>
-    <a href="libri.html">Libri</a
-    <a href="chi-siamo.html">Chi siamo</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contatti.html">Contatti</a>
-  </nav>
-</header>
-<main class="test-page">
-<section class="test-intro">
-<span class="eyebrow">TEST LOVAX • 2 MINUTI</span>
-<h1>Quanto vi conoscete davvero?</h1>
-<p>Rispondi pensando al tuo partner. Non esistono risposte giuste o sbagliate: il risultato è uno spunto per riflettere sulla vostra relazione.</p>
-</section>
 
-<form id="loveQuiz">
-<div class="question"><h3>1. Sai qual è il sogno più importante del tuo partner?</h3>
-<label><input type="radio" name="q1" value="3"> Sì, lo conosco bene</label><label><input type="radio" name="q1" value="2"> Ne abbiamo parlato, ma non del tutto</label><label><input type="radio" name="q1" value="1"> Non ne sono sicuro/a</label></div>
+    <!-- Header / Menu Coerente -->
+    <header class="site-header" style="background: #fff; padding: 15px 30px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; font-size: 20px; font-weight: bold; color: #2c2c2c; letter-spacing: 2px;">LOVAX</a>
+        </div>
+        <nav class="site-nav">
+            <a href="index.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Home</a>
+            <a href="test.html" style="margin-left: 15px; text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 14px;">Test</a>
+            <a href="blog.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Blog</a>
+            <a href="oracolo.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Oracolo</a>
+            <a href="libri.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Libri</a>
+            <a href="chisiamo.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Chi siamo</a>
+            <a href="faq.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">FAQ</a>
+            <a href="contatti.html" style="margin-left: 15px; text-decoration: none; color: #666; font-size: 14px;">Contatti</a>
+        </nav>
+    </header>
 
-<div class="question"><h3>2. Quando il tuo partner ha una giornata difficile, capisci di cosa ha bisogno?</h3>
-<label><input type="radio" name="q2" value="3"> Quasi sempre</label><label><input type="radio" name="q2" value="2"> Dipende</label><label><input type="radio" name="q2" value="1"> Spesso non lo capisco</label></div>
+    <!-- Contenuto Principale -->
+    <main class="test-main">
+        <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #b89782; font-weight: 600;">Area di Autovalutazione</span>
+        <h1 style="color: #2c2c2c; font-size: 32px; margin-top: 5px; font-weight: 600;">I Test di Coppia LOVAX</h1>
+        <p style="color: #666; font-size: 16px; margin-top: 8px; margin-bottom: 30px;">Scegli un tema e scopri di più sulla vostra sintonia, comunicazione e affinità profonda.</p>
 
-<div class="question"><h3>3. Conosci una cosa che fa sentire davvero amato il tuo partner?</h3>
-<label><input type="radio" name="q3" value="3"> Sì</label><label><input type="radio" name="q3" value="2"> Credo di sì</label><label><input type="radio" name="q3" value="1"> Non saprei</label></div>
+        <!-- Elenco dei Test Disponibili -->
+        <div id="tests-list" class="tests-grid">
+            <!-- Test 1 -->
+            <div class="test-card">
+                <div>
+                    <div style="font-size: 24px; margin-bottom: 10px;">💖</div>
+                    <h3 style="color: #2c2c2c; font-size: 18px; margin-bottom: 8px;">I Linguaggi dell'Amore</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.5;">Scopri qual è il canale principale attraverso cui tu e il tuo partner percepite e date affetto.</p>
+                </div>
+                <button class="test-btn" onclick="startTest('amore')">Inizia il Test</button>
+            </div>
 
-<div class="question"><h3>4. Sapresti dire qual è una delle sue paure più grandi?</h3>
-<label><input type="radio" name="q4" value="3"> Sì</label><label><input type="radio" name="q4" value="2"> Forse</label><label><input type="radio" name="q4" value="1"> No</label></div>
+            <!-- Test 2 -->
+            <div class="test-card">
+                <div>
+                    <div style="font-size: 24px; margin-bottom: 10px;">🗣️</div>
+                    <h3 style="color: #2c2c2c; font-size: 18px; margin-bottom: 8px;">Sintonia & Comunicazione</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.5;">Valutate quanto riuscite a capirvi al volo e a gestire i piccoli attriti quotidiani senza tensioni.</p>
+                </div>
+                <button class="test-btn" onclick="startTest('comunicazione')">Inizia il Test</button>
+            </div>
 
-<div class="question"><h3>5. Quando avete un problema, riuscite a parlarne senza attaccarvi?</h3>
-<label><input type="radio" name="q5" value="3"> Nella maggior parte dei casi</label><label><input type="radio" name="q5" value="2"> A volte</label><label><input type="radio" name="q5" value="1"> È molto difficile</label></div>
+            <!-- Test 3 -->
+            <div class="test-card">
+                <div>
+                    <div style="font-size: 24px; margin-bottom: 10px;">🔮</div>
+                    <h3 style="color: #2c2c2c; font-size: 18px; margin-bottom: 8px;">Futuro & Obiettivi</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.5;">Un test per capire se state remando nella stessa direzione e quali sogni condividete di più.</p>
+                </div>
+                <button class="test-btn" onclick="startTest('futuro')">Inizia il Test</button>
+            </div>
+        </div>
 
-<div class="question"><h3>6. Ricordi qual è stata una delle giornate più belle per il tuo partner?</h3>
-<label><input type="radio" name="q6" value="3"> Sì</label><label><input type="radio" name="q6" value="2"> Ne ricordo diverse</label><label><input type="radio" name="q6" value="1"> Non saprei</label></div>
+        <!-- Sezione Svolgimento Quiz Interattivo -->
+        <div id="quiz-container">
+            <h2 id="quiz-title" style="color: #2c2c2c; font-size: 20px; margin-bottom: 15px;"></h2>
+            <p id="quiz-question" style="color: #444; font-size: 16px; margin-bottom: 20px; font-weight: 500;"></p>
+            <div id="quiz-options" style="display: flex; flex-direction: column; gap: 10px;"></div>
+            <button onclick="backToTests()" style="background: none; border: none; color: #888; cursor: pointer; font-size: 13px; margin-top: 25px;">← Torna a tutti i test</button>
+        </div>
+    </main>
 
-<div class="question"><h3>7. Il tuo partner sa cosa ti preoccupa in questo periodo?</h3>
-<label><input type="radio" name="q7" value="3"> Sì, ne parliamo</label><label><input type="radio" name="q7" value="2"> In parte</label><label><input type="radio" name="q7" value="1"> Poco</label></div>
+    <!-- Script della Logica dei Test -->
+    <script>
+        const testData = {
+            amore: {
+                title: "💖 Test: I Linguaggi dell'Amore",
+                questions: [
+                    {
+                        q: "Quando ti senti giù, cosa ti fa sentire più sollevato/a?",
+                        options: [
+                            { text: "Un abbraccio stretto e contatto fisico", score: "Contatto Fisico" },
+                            { text: "Parole di conforto e incoraggiamento", score: "Parole di Affermazione" },
+                            { text: "Qualcuno che mi aiuti concretamente a sbrigare le faccende", score: "Atti di Servizio" },
+                            { text: "Un regalo inaspettato o un pensiero speciale", score: "Doni" }
+                        ]
+                    }
+                ]
+            },
+            comunicazione: {
+                title: "🗣️ Test: Sintonia & Comunicazione",
+                questions: [
+                    {
+                        q: "Quando c'è un disaccordo in casa, come tendi a reagire?",
+                        options: [
+                            { text: "Affronto subito il discorso parlandone apertamente", score: "Diretto" },
+                            { text: "Prendo un po' di tempo per riflettere prima di parlare", score Riflessivo: "Riflessivo" },
+                            { text: "Cerco di sdrammatizzare con un sorriso o una battuta", score: "Mediار" }
+                        ]
+                    }
+                ]
+            },
+            futuro: {
+                title: "🔮 Test: Futuro & Obiettivi",
+                questions: [
+                    {
+                        q: "Qual è la priorità principale per la vostra coppia nei prossimi 2 anni?",
+                        options: [
+                            { text: "Viaggiare e fare nuove esperienze insieme", score: "Avventura" },
+                            { text: "Costruire stabilità (casa, progetti lavorativi, futuro)", score: "Stabilità" },
+                            { text: "Coltivare il tempo di qualità e la connessione emotiva", score: "Connessione" }
+                        ]
+                    }
+                ]
+            }
+        };
 
-<div class="question"><h3>8. Avete almeno un'attività che vi piace fare insieme?</h3>
-<label><input type="radio" name="q8" value="3"> Sì, diverse</label><label><input type="radio" name="q8" value="2"> Una o due</label><label><input type="radio" name="q8" value="1"> Quasi nessuna</label></div>
+        let currentTestKey = '';
 
-<div class="question"><h3>9. Quando il partner è silenzioso, riesci a capire quando ha bisogno di spazio?</h3>
-<label><input type="radio" name="q9" value="3"> Sì</label><label><input type="radio" name="q9" value="2"> A volte</label><label><input type="radio" name="q9" value="1"> Difficilmente</label></div>
+        function startTest(testKey) {
+            currentTestKey = testKey;
+            const test = testData[testKey];
+            
+            document.getElementById('tests-list').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            
+            document.getElementById('quiz-title').innerText = test.title;
+            document.getElementById('quiz-question').innerText = test.questions[0].q;
+            
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            
+            test.questions[0].options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.innerText = opt.text;
+                btn.style.background = '#faf8f5';
+                btn.style.border = '1px solid #eae3dc';
+                btn.style.padding = '12px 15px';
+                btn.style.borderRadius = '8px';
+                btn.style.cursor = 'pointer';
+                btn.style.textAlign = 'left';
+                btn.style.fontSize = '14px';
+                btn.style.color = '#333';
+                btn.style.transition = 'all 0.2s';
+                
+                btn.onmouseover = () => btn.style.background = '#eae3dc';
+                btn.onmouseout = () => btn.style.background = '#faf8f5';
+                
+                btn.onclick = () => showResult(opt.score);
+                optionsContainer.appendChild(btn);
+            });
+        }
 
-<div class="question"><h3>10. Quanto senti di conoscere la persona con cui stai?</h3>
-<label><input type="radio" name="q10" value="3"> Moltissimo</label><label><input type="radio" name="q10" value="2"> Abbastanza</label><label><input type="radio" name="q10" value="1"> C'è ancora molto da scoprire</label></div>
+        function showResult(score) {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = `
+                <h3 style="color: #2c2c2c; margin-bottom: 15px;">Risultato del Test</h3>
+                <p style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">Il profilo predominante emerso dalle tue risposte è: <strong>${score}</strong>. Condividi questo risultato con il tuo partner per confrontare i vostri punti di vista!</p>
+                <button onclick="backToTests()" class="test-btn" style="margin-top: 0;">Torna a tutti i test</button>
+            `;
+        }
 
-<a href="https://lovax-truth-machine.lovable.app" target="_blank" class="button" style="text-align: center; text-decoration: none; display: block;">Scopri il risultato su Lovable</a>
-</form>
-
-<div id="quizResult" class="result" hidden></div>
-</main>
-<footer><div><strong>LOVAX</strong><br><span>Un test è uno spunto, non una diagnosi.</span></div><div><a href="index.html">Torna alla Home</a></div></footer>
-<script src="script.js"></script>
+        function backToTests() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('tests-list').style.display = 'grid';
+        }
+    </script>
 </body>
 </html>
