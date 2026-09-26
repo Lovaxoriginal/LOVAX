@@ -139,71 +139,71 @@
         </div>
     </main>
 
-    <!-- Script con 10 domande per test -->
+    <!-- Script con 10 domande per test ripulito -->
     <script>
         const testData = {
             amore: {
                 title: "💖 Test: I Linguaggi dell'Amore",
                 questions: [
                     { q: "Quando ti senti giù, cosa ti fa sentire più sollevato/a?", options: [
-                        { text: "Un abbraccio stretto e contatto fisico", category: "Contatto Fisico" },
-                        { text: "Parole di conforto e incoraggiamento", category: "Parole" },
-                        { text: "Un aiuto concreto nelle faccende quotidiane", category: "Servizio" },
-                        { text: "Un regalo o un pensiero inaspettato", category: "Doni" }
+                        { text: "Un abbraccio stretto e contatto fisico" },
+                        { text: "Parole di conforto e incoraggiamento" },
+                        { text: "Un aiuto concreto nelle faccende quotidiane" },
+                        { text: "Un regalo o un pensiero inaspettato" }
                     ]},
                     { q: "Qual è il modo in cui preferisci dimostrare affetto al partner?", options: [
-                        { text: "Sorprendendolo/a con piccoli doni significativi", category: "Doni" },
-                        { text: "Passando tempo di qualità insieme senza distrazioni", category: "Tempo" },
-                        { text: "Facendolo/a sentire protetto/a con gesti fisici", category: "Contatto Fisico" },
-                        { text: "Dicendogli/le spesso quanto lo/la apprezzo", category: "Parole" }
+                        { text: "Sorprendendolo/a con piccoli doni significativi" },
+                        { text: "Passando tempo di qualità insieme senza distrazioni" },
+                        { text: "Facendolo/a sentire protetto/a con gesti fisici" },
+                        { text: "Dicendogli/le spesso quanto lo/la apprezzo" }
                     ]},
                     { q: "Cosa ti ferisce di più in una relazione?", options: [
-                        { text: "Ricevere critiche verbali o insulti", category: "Parole" },
-                        { text: "Sentire una distanza fisica o freddezza", category: "Contatto Fisico" },
-                        { text: "Notare disinteresse o mancanza di tempo condiviso", category: "Tempo" },
-                        { text: "Vedere che il partner non mi supporta nelle difficoltà pratiche", category: "Servizio" }
+                        { text: "Ricevere critiche verbali o insulti" },
+                        { text: "Sentire una distanza fisica o freddezza" },
+                        { text: "Notare disinteresse o mancanza di tempo condiviso" },
+                        { text: "Vedere che il partner non mi supporta nelle difficoltà" }
                     ]},
                     { q: "Quale sorpresa gradiresti di più per un anniversario?", options: [
-                        { text: "Un viaggio romantico weekend solo noi due", category: "Tempo" },
-                        { text: "Un oggetto speciale che desideravo da tempo", category: "Doni" },
-                        { text: "Una lettera d'amore profonda scritta a mano", category: "Parole" },
-                        { text: "Il partner che si occupa di tutte le incombenze di casa per liberarmi", category: "Servizio" }
+                        { text: "Un viaggio romantico weekend solo noi due" },
+                        { text: "Un oggetto speciale che desideravo da tempo" },
+                        { text: "Una lettera d'amore profonda scritta a mano" },
+                        { text: "Il partner che si occupa delle incombenze di casa" }
                     ]},
                     { q: "Qual è il complimento che ti fa più piacere ricevere?", options: [
-                        { text: "Sei una persona bellissima e affascinante", category: "Contatto Fisico" },
-                        { text: "Stimo enormemente quello che fai e come lo fai", category: "Parole" },
-                        { text: "Apprezzo tutto l'impegno che metti per noi", category: "Servizio" },
-                        { text: "Adoro passare il tempo in tua compagnia", category: "Tempo" }
+                        { text: "Sei una persona bellissima e affascinante" },
+                        { text: "Stimo enormemente quello che fai e come lo fai" },
+                        { text: "Apprezzo tutto l'impegno che metti per noi" },
+                        { text: "Adoro passare il tempo in tua compagnia" }
                     ]},
-                    { q: "Come capisci che il tuo partner ti ama profondamente?",options: [
-                        { text: "Da come mi guarda e mi cerca fisicamente", category: "Contatto Fisico" },
-                        { text: "Da ciò che dice e dai suoi incoraggiamenti", category: "Parole" },
-                        { text: "Da come organizza il suo tempo per stare con me", category: "Tempo" },
-                        { text: "Da come mi aiuta quando sono in difficoltà", category: "Servizio" }
+                    { q: "Come capisci che il tuo partner ti ama profondamente?", options: [
+                        { text: "Da come mi guarda e mi cerca fisicamente" },
+                        { text: "Da ciò che dice e dai suoi incoraggiamenti" },
+                        { text: "Da come organizza il suo tempo per stare con me" },
+                        { text: "Da come mi aiuta quando sono in difficoltà" }
                     ]},
                     { q: "Quale di queste mancanze ti pesa di più nella routine?", options: [
-                        { text: "Pochi momenti di intimità e coccole", category: "Contatto Fisico" },
-                        { text: "Poche parole dolci o di stima", category: "Parole" },
-                        { text: "Mancanza di attenzioni materiali o pensierini", category: "Doni" },
-                        { text: "Poco supporto concreto nelle mansioni quotidiane", category: "Servizio" }
+                        { text: "Pochi momenti di intimità e coccole" },
+                        { text: "Poche parole dolci o di stima" },
+                        { text: "Mancanza di attenzioni materiali o pensierini" },
+                        { text: "Poco supporto concreto nelle mansioni quotidiane" }
                     ]},
-                    { q: "Cosa ti fa sentire più apprezzato/a sul lavoro o nei progetti?", options: [
-                        { text: "Un elogio pubblico o verbale", category: "Parole" },
-                        { text: "Un piccolo regalo celebrativo", category: "Doni" },
-                        { text: "Un aiuto concreto per alleggerire il carico", category: "Servizio" },
-                        { text: "Festeggiare insieme dedicandosi una serata speciale", category: "Tempo" }
+                    { q: "Cosa ti fa sentire più apprezzato/a?", options: [
+                        { text: "Un elogio pubblico o verbale" },
+                        { text: "Un piccolo regalo celebrativo" },
+                        { text: "Un aiuto concreto per alleggerire il carico" },
+                        { text: "Festeggiare insieme dedicandosi una serata speciale" }
                     ]},
                     { q: "Qual è il tuo ricordo felice preferito?", options: [
-                        { text: "Un abbraccio intenso dopo una giornata difficile", category: "Contatto Fisico" },
-                        { text: "Una vacanza indimenticabile trascorsa insieme", category: "Tempo" },
-                        { text: "Una frase stupenda detta dal partner inaspettatamente", category: "Parole" },
-                        { text: "Un regalo che desideravo tantissimo ricevuto a sorpresa", category: "Doni" }
+                        { text: "Un abbraccio intenso dopo una giornata difficile" },
+                        { text: "Una vacanza indimenticabile trascorsa insieme" },
+                        { text: "Una frase stupenda detta dal partner inaspettatamente" },
+                        { text: "Un regalo che desideravo tantissimo ricevuto a sorpresa" }
                     ]},
                     { q: "Se dovessi scegliere un pilastro per la coppia, quale sceglieresti?", options: [
-                        { text: "La presenza fisica e la tenerezza costante", category: "Contatto Fisico" },
-                        { text: "Il dialogo aperto e le parole di sostegno", category: "Parole" },
-                        { text: "La dedizione reciproca e il tempo condiviso", category: "Tempo" },
-                        { text: "La concretezza dell'aiutarsi ogni giorno", category: "Servizio" }
+                        { text: "La presenza fisica e la tenerezza costante" },
+                        { text: "Il dialogo aperto e le parole di sostegno" },
+                        { text: "La dedizione reciproca e il tempo condiviso" },
+                        { text: "La concretezza dell'aiutarsi ogni giorno" }
                     ]}
                 ]
             },
@@ -211,65 +211,64 @@
                 title: "🗣️ Test: Sintonia & Comunicazione",
                 questions: [
                     { q: "Quando c'è un disaccordo in casa, come tendi a reagire?", options: [
-                        { text: "Affronto subito il discorso parlandone apertamente", points: "Diretto" },
-                        { text: "Prendo un po' di tempo per riflettere prima di parlare", points: "Riflessivo" },
-                        { text: "Cerco di alleggerire la tensione con un sorriso", points: "Mediatore" },
-                        { text: "Tendo a chiudermi in me stesso/a momentaneamente", points: "Riservato" }
+                        { text: "Affronto subito il discorso parlandone apertamente" },
+                        { text: "Prendo un po' di tempo per riflettere prima di parlare" },
+                        { text: "Cerco di alleggerire la tensione con un sorriso" },
+                        { text: "Tendo a chiudermi in me stesso/a momentaneamente" }
                     ]},
                     { q: "Credi che tu e il tuo partner vi capiate al volo?", options: [
-                        { text: "Sì, spesso ci basta uno sguardo", points: "Alto" },
-                        { text: "Abbiamo bisogno di parlare molto per spiegarci", points: "Medio" },
-                        { text: "A volte facciamo fatica a sintonizzarci", points: "Basso" },
-                        $
+                        { text: "Sì, spesso ci basta uno sguardo" },
+                        { text: "Abbiamo bisogno di parlare molto per spiegarci" },
+                        { text: "A volte facciamo fatica a sintonizzarci" },
+                        { text: "Spesso fraintendiamo le intenzioni dell'altro" }
                     ]},
                     { q: "Come gestite la risoluzione di una discussione accesa?", options: [
-                        { text: "Facciamo pace facendo chiarezza prima di dormire", points: "Costruttivo" },
-                        { text: "Lasciamo decantare per qualche ora e poi riproviamo", points: "Riflessivo" },
-                        { text: "Spesso trascende e rimane un piccolo amaro in bocca", points: "Difficile" },
-                        { text: "Evitiamo l'argomento finché passa da solo", points: "Evitante" }
+                        { text: "Facciamo pace facendo chiarezza prima di dormire" },
+                        { text: "Lasciamo decantare per qualche ora e poi riproviamo" },
+                        { text: "Spesso trascende e rimane un piccolo amaro in bocca" },
+                        { text: "Evitiamo l'argomento finché passa da solo" }
                     ]},
                     { q: "Ti senti libero/a di esprimere qualsiasi opinione al partner?", options: [
-                        { text: "Assolutamente sì, senza filtri né timori", points: "Alto" },
-                        { text: "Sì, ma cerco sempre il momento e i modi giusti", points: "Equilibrato" },
-                        { text: "A volte temo di ferirlo/a o di scatenare discussioni", points: "Cautolo" },
-                        { text: "Spesso preferisco tacere per quieto vivere", points: "Chiuso" }
+                        { text: "Assolutamente sì, senza filtri né timori" },
+                        { text: "Sì, ma cerco sempre il momento e i modi giusti" },
+                        { text: "A volte temo di ferirlo/a o di scatenare discussioni" },
+                        { text: "Spesso preferisco tacere per quieto vivere" }
                     ]},
                     { q: "Ascolti attivamente il partner quando espone un problema?", options: [
-                        { text: "Sì, mi metto nei suoi panni senza interrompere", points: "Ottimo" },
-                        { text: "Ascolto ma tendo subito a dare soluzioni pratiche", points: "Pragmatico" },
-                        $
-                        { text: "A volte mi distraggo o penso a cosa replicare", points: "Distratto" },
-                        { text: "Fatico a mantenere la pazienza se l'argomento mi annoia", points: "Impaziente" }
+                        { text: "Sì, mi metto nei suoi panni senza interrompere" },
+                        { text: "Ascolto ma tendo subito a dare soluzioni pratiche" },
+                        { text: "A volte mi distraggo o penso a cosa replicare" },
+                        { text: "Fatico a mantenere la pazienza se l'argomento mi annoia" }
                     ]},
                     { q: "Quanto parlate dei vostri sentimenti più profondi?", options: [
-                        { text: "Molto spesso, è una nostra abitudine consolidata", points: "Profondo" },
-                        { q: text: "Ne parliamo quando sorge una necessità specifica", points: "Funzionale" },
-                        { text: "Raramente, preferiamo concentrarci sulla concretezza", points: "Pratico" },
-                        { text: "Quasi mai, ci imbarazza o risulta difficile", points: "Superficiale" }
+                        { text: "Molto spesso, è una nostra abitudine consolidata" },
+                        { text: "Ne parliamo quando sorge una necessità specifica" },
+                        { text: "Raramente, preferiamo concentrarci sulla concretezza" },
+                        { text: "Quasi mai, ci imbarazza o risulta difficile" }
                     ]},
                     { q: "Come reagisci alle critiche costruttive del partner?", options: [
-                        { text: "Le accolgo con serenità e cerco di migliorarmi", points: "Costruttivo" },
-                        { text: "Inizialmente mi metto sulla difensiva, poi rifletto", points: "Sensibile" },
-                        { text: "Le prendo sul personale e mi rattristo", points: "Emotivo" },
-                        { text: "Le rifiuto e penso che stia esagerando", points: "Chiuso" }
+                        { text: "Le accolgo con serenità e cerco di migliorarmi" },
+                        { text: "Inizialmente mi metto sulla difensiva, poi rifletto" },
+                        { text: "Le prendo sul personale e mi rattristo" },
+                        { text: "Le rifiuto e penso che stia esagerando" }
                     ]},
-                    { q: "Riuscite a mantenere il senso dell'umorismo anche nei momenti tesi?", options: [
-                        { text: "Sì, una battuta al momento giusto ci salva sempre", points: "Ottimo" },
-                        { text: "A volte sì, se la tensione non è troppo alta", points: "Moderato" },
-                        { text: "Raramente, quando siamo tesi siamo molto seri", points: "Serioso" },
-                        { text: "Mai, il nervosismo prende totalmente il sopravvento", points: "Teso" }
+                    { q: "Riuscite a mantenere il senso dell'umorismo nei momenti tesi?", options: [
+                        { text: "Sì, una battuta al momento giusto ci salva sempre" },
+                        { text: "A volte sì, se la tensione non è troppo alta" },
+                        { text: "Raramente, quando siamo tesi siamo molto seri" },
+                        { text: "Mai, il nervosismo prende totalmente il sopravvento" }
                     ]},
                     { q: "Comunicate chiaramente i vostri bisogni emotivi?", options: [
-                        { text: "Sì, dico apertamente di cosa ho bisogno", points: "Chiaro" },
-                        { text: "Spero sempre che il partner lo capisca da solo", points: "Implicito" },
-                        { text: "Faccio fatica a chiedere e poi mi lamento", points: "Contraddittorio" },
-                        { text: "Tengo tutto dentro per non pesare", points: "represso" }
+                        { text: "Sì, dico apertamente di cosa ho bisogno" },
+                        { text: "Spero sempre che il partner lo capisca da solo" },
+                        { text: "Faccio fatica a chiedere e poi mi lamento" },
+                        { text: "Tengo tutto dentro per non pesare" }
                     ]},
                     { q: "Quanto è soddisfacente il vostro dialogo quotidiano?", options: [
-                        { text: "Molto, parliamo di tutto con grande piacere", points: "Eccellente" },
-                        { text: "Buono, anche se la stanchezza a volte frena", points: "Buono" },
-                        { text: "Sufficiente, ridotto perlopiù alla gestione pratica", points: "Pratico" },
-                        { text: "Scarso, avremmo bisogno di ritrovare complicità", points: "Carenti" }
+                        { text: "Molto, parliamo di tutto con grande piacere" },
+                        { text: "Buono, anche se la stanchezza a volte frena" },
+                        { text: "Sufficiente, ridotto perlopiù alla gestione pratica" },
+                        { text: "Scarso, avremmo bisogno di ritrovare complicità" }
                     ]}
                 ]
             },
@@ -277,64 +276,64 @@
                 title: "🔮 Test: Futuro & Obiettivi",
                 questions: [
                     { q: "Qual è la priorità principale per la vostra coppia nei prossimi 2 anni?", options: [
-                        { text: "Viaggiare e fare nuove esperienze insieme", points: "Avventura" },
-                        { text: "Costruire stabilità (casa, progetti lavorativi)", points: "Stabilità" },
-                        { text: "Coltivare il tempo di qualità e la connessione emotiva", points: "Connessione" },
-                        { text: "Realizzare traguardi professionali o di crescita personale", points: "Crescita" }
+                        { text: "Viaggiare e fare nuove esperienze insieme" },
+                        { text: "Costruire stabilità (casa, progetti lavorativi)" },
+                        { text: "Coltivare il tempo di qualità e la connessione emotiva" },
+                        { text: "Realizzare traguardi professionali o di crescita" }
                     ]},
                     { q: "Come immaginate i vostri weekend ideali tra qualche anno?", options: [
-                        { text: "In giro per il mondo a scoprire posti nuovi", points: "Avventura" },
-                        { text: "Tranquilli nella nostra casa curata nei dettagli", points: "Stabilità" },
-                        { text: "Dediti alle passioni condivise e agli affetti", points: "Connessione" },
-                        { text: "Impegnati in progetti creativi o formativi", points: "Crescita" }
+                        { text: "In giro per il mondo a scoprire posti nuovi" },
+                        { text: "Tranquilli nella nostra casa curata nei dettagli" },
+                        { text: "Dediti alle passioni condivise e agli affetti" },
+                        { text: "Impegnati in progetti creativi o formativi" }
                     ]},
                     { q: "Come affrontate insieme i grandi cambiamenti di vita?", options: [
-                        { text: "Con entusiasmo ed eccitazione per la novità", points: "Avventura" },
-                        { text: "Pianificando tutto con cura per minimizzare i rischi", points: "Stabilità" },
-                        { text: "Sostenendoci emotivamente passo dopo passo", points: "Connessione" },
-                        { text: "Vedendoli come opportunità di successo personale", points: "Crescita" }
+                        { text: "Con entusiasmo ed eccitazione per la novità" },
+                        { text: "Pianificando tutto con cura per minimizzare i rischi" },
+                        { text: "Sostenendoci emotivamente passo dopo passo" },
+                        { text: "Vedendoli come opportunità di successo personale" }
                     ]},
                     { q: "Quale sogno nel cassetto vorreste realizzare per primo?", options: [
-                        { text: "Un viaggio epico intorno al mondo", points: "Avventura" },
-                        { text: "Acquistare o ristrutturare la casa dei sogni", points: "Stabilità" },
-                        { text: "Creare una famiglia o consolidare il nostro nido d'amore", points: "Connessione" },
-                        { text: "Avviare un progetto ambizioso o un'attività nostra", points: "Crescita" }
+                        { text: "Un viaggio epico intorno al mondo" },
+                        { text: "Acquistare o ristrutturare la casa dei sogni" },
+                        { text: "Creare una famiglia o consolidare il nostro nido" },
+                        { text: "Avviare un progetto ambizioso o un'attività nostra" }
                     ]},
                     { q: "Cosa vi spaventa di più pensando al futuro della relazione?", options: [
-                        { text: "La noia e la caduta nella routine grigia", points: "Avventura" },
-                        { text: "L'instabilità economica o lavorativa", points: "Stabilità" },
-                        { text: "La perdita di sintonia emotiva e vicinanza", points: "Connessione" },
-                        { text: "Il blocco della crescita personale o professionale", points: "Crescita" }
+                        { text: "La noia e la caduta nella routine grigia" },
+                        { text: "L'instabilità economica o lavorativa" },
+                        { text: "La perdita di sintonia emotiva e vicinanza" },
+                        { text: "Il blocco della crescita personale o professionale" }
                     ]},
                     { q: "Quanto parlate dei vostri progetti a lungo termine?", options: [
-                        { text: "Continuamente, abbiamo una visione chiarissima e condivisa", points: "Eccellente" },
-                        { text: "Ne parliamo spesso e ci aggiorniamo regolarmente", points: "Buono" },
-                        { text: "Viviamo molto alla giornata senza programmare troppo", points: "Spontanei" },
-                        { text: "Raramente, abbiamo visioni un po' differenti", points: "Divergenti" }
+                        { text: "Continuamente, abbiamo una visione chiara e condivisa" },
+                        { text: "Ne parliamo spesso e ci aggiorniamo regolarmente" },
+                        { text: "Viviamo molto alla giornata senza programmare troppo" },
+                        { text: "Raramente, abbiamo visioni un po' differenti" }
                     ]},
                     { q: "Qual è il vostro rapporto con il risparmio e gli investimenti?", options: [
-                        { text: "Spendiamo volentieri per esperienze e viaggi indimenticabili", points: "Avventura" },
-                        { text: "Siamo molto previdenti e miriamo a costruire solide basi", points: "Stabilità" },
-                        { text: "Ci basta il giusto per vivere sereni e goderci il tempo", points: "Connessione" },
-                        { text: "Investiamo molto sulla formazione e sul futuro lavorativo", points: "Crescita" }
+                        { text: "Spendiamo volentieri per esperienze e viaggi" },
+                        { text: "Siamo molto previdenti e miriamo a solide basi" },
+                        { text: "Ci basta il giusto per vivere sereni e goderci il tempo" },
+                        { text: "Investiamo molto sulla formazione e sul futuro" }
                     ]},
                     { q: "Come vi vedete invecchiare insieme?", options: [
-                        { text: "Sempre in movimento, girando il mondo da pensionati sprint", points: "Avventura" },
-                        { text: "In una splendida casa con nipoti, radici e stabilità", points: "Stabilità" },
-                        { text: "Sempre uniti, mano nella mano, complici come il primo giorno", points: "Connessione" },
-                        { text: "Realizzati, con una carriera e una vita ricca di soddisfazioni", points: "Crescita" }
+                        { text: "Sempre in movimento, girando il mondo" },
+                        { text: "In una splendida casa con radici e stabilità" },
+                        { text: "Sempre uniti, mano nella mano, complici" },
+                        { text: "Realizzati, con una vita ricca di soddisfazioni" }
                     ]},
                     { q: "Quanto ritenete importanti gli obiettivi condivisi nella coppia?", options: [
-                        { text: "Fondamentali per dare brio ed entusiasmo alla vita", points: "Avventura" },
-                        { text: "Essenziali per avere sicurezza e tranquillità mentale", points: "Stabilità" },
-                        { text: "Importanti, ma la priorità assoluta è il benessere emotivo", points: "Connessione" },
-                        { text: "Cruciali per spingersi a vicenda verso il meglio", points: "Crescita" }
+                        { text: "Fondamentali per dare brio ed entusiasmo alla vita" },
+                        { text: "Essenziali per avere sicurezza e tranquillità" },
+                        { text: "Importanti, ma la priorità è il benessere emotivo" },
+                        { text: "Cruciali per spingersi a vicenda verso il meglio" }
                     ]},
                     { q: "Qual è il vostro livello di sintonia sui progetti futuri?", options: [
-                        { text: "Perfetta sintonia: remiamo esattamente nella stessa direzione", points: "Perfetta" },
-                        { text: "Ottima sintonia, con piccoli dettagli da accordare", points: "Ottima" },
-                        { text: "Discreta, ma ci stiamo lavorando per capirci meglio", points: "Discreta" },
-                        { text: "In fase di costruzione, abbiamo visioni da conciliare", points: "In evoluzione" }
+                        { text: "Perfetta sintonia: remiamo nella stessa direzione" },
+                        { text: "Ottima sintonia, con piccoli dettagli da accordare" },
+                        { text: "Discreta, ma ci stiamo lavorando per capirci meglio" },
+                        { text: "In fase di costruzione, visioni da conciliare" }
                     ]}
                 ]
             }
