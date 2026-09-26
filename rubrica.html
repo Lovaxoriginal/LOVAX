@@ -144,16 +144,16 @@
         
         <div class="page-header">
             <h1>La Rubrica della Complicità</h1>
-            <p>Un appuntamento quotidiano con il dialogo autentico. Domande mirate per riscoprirsi, capirsi a fondo e rafforzare il legame.</p>
+            <p>Un appuntamento quotidiano con il dialogo autentico. Ogni giorno una nuova domanda per riscoprirsi, capirsi a fondo e rafforzare il legame.</p>
         </div>
 
         <!-- Box Interattivo Domanda del Giorno -->
         <div class="question-card">
-            <span class="question-badge">✨ Domanda del Giorno</span>
+            <span class="question-badge">✨ Domanda di Oggi</span>
             <div class="question-text" id="domandaBox">
-                "Qual è stato il momento esatto in questa settimana in cui ti sei sentito/a più apprezzato/a da me?"
+                Caricamento della domanda di oggi...
             </div>
-            <button class="btn-change" onclick="cambiaDomanda()">💬 Estrai un'altra domanda</button>
+            <button class="btn-change" onclick="estraiCasuale()">🎲 Scopri un'altra domanda casuale</button>
         </div>
 
         <!-- Archivio / Consigli della Rubrica -->
@@ -177,7 +177,7 @@
 
     </main>
 
-    <!-- Script interattivo per cambiare domanda al click -->
+    <!-- Script automatico basato sulla data del giorno -->
     <script>
         const domande = [
             "Qual è stato il momento esatto in questa settimana in cui ti sei sentito/a più apprezzato/a da me?",
@@ -186,10 +186,30 @@
             "Se potessi pianificare una giornata perfetta solo per noi due, da dove inizieremmo?",
             "Qual è una piccola abitudine che ho e che ti fa sentire al sicuro?",
             "C'è qualcosa di nuovo che vorresti provassimo insieme nei prossimi mesi?",
-            "Qual è il complimento che ti piacerebbe sentirti dire più spesso?"
+            "Qual è il complimento che ti piacerebbe sentirti dire più spesso?",
+            "In che modo posso esserti più vicino/a nei momenti in cui sei particolarmente stressato/a?",
+            "Qual è la canzone o il film che ti fa subito pensare alla nostra storia d'amore?",
+            "Qual è una cosa che hai imparato da me da quando stiamo insieme?"
         ];
 
-        function cambiaDomanda() {
+        // Calcola l'indice del giorno in base alla data di oggi
+        function getDomandaDelGiorno() {
+            const oggi = new Date();
+            // Calcolo semplice basato sul giorno dell'anno
+            const inizioAnno = new Date(oggi.getFullYear(), 0, 0);
+            const diff = oggi - inizioAnno;
+            const unGiorno = 1000 * 60 * 60 * 24;
+            const giornoDellAnno = Math.floor(diff / unGiorno);
+            
+            const indice = giornoDellAnno % domande.length;
+            return domande[indice];
+        }
+
+        // Imposta la domanda al caricamento della pagina
+        document.getElementById('domandaBox').innerText = '" ' + getDomandaDelGiorno() + ' "';
+
+        // Permette comunque di estrarne una casuale se cliccano il bottone
+        function estraiCasuale() {
             const randomIndex = Math.floor(Math.random() * domande.length);
             document.getElementById('domandaBox').innerText = '" ' + domande[randomIndex] + ' "';
         }
