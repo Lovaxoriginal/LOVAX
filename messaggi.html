@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatore di Messaggi d'Amore - LOVAX</title>
+    <meta name="description" content="Crea messaggi d'amore unici, dolci o appassionati da inviare al tuo partner su WhatsApp in un click.">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf8f5;
+            color: #2c2c2c;
+            box-sizing: border-box;
+        }
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        /* Selettore di Categorie */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .cat-btn {
+            background: #ffffff;
+            border: 2px solid #eae3dc;
+            border-radius: 14px;
+            padding: 15px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: #2c2c2c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .cat-btn:hover, .cat-btn.active {
+            border-color: #b89782;
+            background: #b89782;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        /* Box del Messaggio Generato */
+        .message-card {
+            background: #ffffff;
+            border: 2px solid #b89782;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .message-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2c2c2c;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .actions-flex {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            background: #2c2c2c;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-action:hover {
+            background: #b89782;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+        }
+        .btn-whatsapp:hover {
+            background: #1EBE5D;
+        }
+        .notification {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #25D366;
+            font-weight: 600;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Menu Unificato -->
+    <header class="site-header" style="background: #fff; padding: 15px 40px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="./logo-lovax.jpg" alt="Logo LOVAX" style="width: 36px; height: 36px; object-fit: cover; border-radius: 50%;">
+            <a href="index.html" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #2c2c2c; letter-spacing: 2px;">LOVAX</a>
+        </div>
+        <nav class="site-nav" style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <a href="index.html" style="text-decoration: none; color: #666; font-size: 15px;">Home</a>
+            <a href="test.html" style="text-decoration: none; color: #666; font-size: 15px;">Test</a>
+            <a href="rubrica.html" style="text-decoration: none; color: #666; font-size: 15px;">Rubrica</a>
+            <a href="minigiochi.html" style="text-decoration: none; color: #666; font-size: 15px;">Mini-Giochi</a>
+            <a href="messaggi.html" style="text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 15px;">Messaggi</a>
+            <a href="blog.html" style="text-decoration: none; color: #666; font-size: 15px;">Blog</a>
+            <a href="oracolo.html" style="text-decoration: none; color: #666; font-size: 15px;">Libri</a>
+            <a href="shop.html" style="text-decoration: none; color: #666; font-size: 15px;">Shop</a>
+            <a href="chisiamo.html" style="text-decoration: none; color: #666; font-size: 15px;">Chi siamo</a>
+            <a href="faq.html" style="text-decoration: none; color: #666; font-size: 15px;">FAQ</a>
+            <a href="contatti.html" style="text-decoration: none; color: #666; font-size: 15px;">Contatti</a>
+        </nav>
+    </header>
+
+    <!-- Contenuto Pagina Messaggi -->
+    <main class="main-container">
+        
+        <div class="page-header">
+            <h1>Generatore di Messaggi d'Amore</h1>
+            <p>Scegli l'atmosfera che preferisci e crea la dedica perfetta da inviare al tuo partner per sorprenderlo in qualsiasi momento della giornata.</p>
+        </div>
+
+        <!-- Selettore Categorie -->
+        <div class="categories-grid">
+            <button class="cat-btn active" onclick="selezionaCategoria('dolci', this)">🍯 Dolci & Teneri</button>
+            <button class="cat-btn" onclick="selezionaCategoria('profondi', this)">✨ Profondi</button>
+            <button class="cat-btn" onclick="selezionaCategoria('buongiorno', this)">🌅 Buongiorno</button>
+            <button class="cat-btn" onclick="selezionaCategoria('sorpresa', this)">🔥 Fuori dagli schemi</button>
+        </div>
+
+        <!-- Box del Messaggio -->
+        <div class="message-card">
+            <div class="message-text" id="messaggioBox">
+                "Sei il pensiero più bello che fa iniziare bene ogni mia giornata."
+            </div>
+            
+            <div class="actions-flex">
+                <button class="btn-action" onclick="generaMessaggio()">🔄 Genera un altro</button>
+                <button class="btn-action" onclick="copiaTesto()">📋 Copia Testo</button>
+                <a id="whatsappBtn" href="#" target="_blank" class="btn-action btn-whatsapp">💬 Invia su WhatsApp</a>
+            </div>
+            <div class="notification" id="notificaCopia"></div>
+        </div>
+
+    </main>
+
+    <!-- Script JavaScript per generare i messaggi e gestire la copia/WhatsApp -->
+    <script>
+        const databaseMessaggi = {
+            dolci: [
+                "Sei il pensiero più bello che fa iniziare bene ogni mia giornata.",
+                "Anche nelle giornate più frenetiche, il mio posto preferito nel mondo resta tra le tue braccia.",
+                "Non smetterò mai di stupirmi di quanto la mia vita sia più luminosa da quando ci sei tu.",
+                "A volte basta un tuo sguardo per rimettere a posto tutto il caos intorno a me.",
+                "Il tempo passa, ma la voglia di stringerti forte è esattamente quella del primo giorno."
+            ],
+            profondi: [
+                "Averti accanto non significa solo condividere dei momenti, ma aver trovato una casa ovunque noi siamo.",
+                "Ti amo non solo per come sei, ma per come riesci a tirare fuori la versione migliore di me.",
+                "Ogni giorno che passa scopro un dettaglio di te che me ne fa innamorare ancora di più.",
+                "Se potessi scegliere una sola certezza nella vita, sceglierei di averti sempre al mio fianco.",
+                "Il nostro legame è la cosa più preziosa che ho costruito: proteggerlo è la mia priorità."
+            ],
+            buongiorno: [
+                "Buongiorno amore mio! Volevo solo ricordarti che sei la prima cosa a cui ho pensato stamattina.",
+                "Che la tua giornata sia splendida almeno quanto il sorriso che mi regali ogni volta che ti guardo. Buongiorno!",
+                "Svegliarmi sapendo che esisti rende tutto più leggero. Buongiorno vita mia!",
+                "Un caffè caldo e il pensiero di vederti presto: la ricetta perfetta per iniziare la giornata."
+            ],
+            sorpresa: [
+                "Piccolo promemoria: ti amo alla follia, anche quando rubi tutte le coperte di notte! ❤️",
+                "Sei ufficialmente la persona che disturba di più i miei pensieri mentre cerco di concentrarmi sul lavoro (in modo adorabile).",
+                "Meno male che ci sei tu a sopportarmi, meriteresti una medaglia d'oro e un abbraccio infinito!",
+                "Ho fatto due conti: ti amo spaventosamente tanto. Preparati a subire coccole extra stasera."
+            ]
+        };
+
+        let categoriaCorrente = 'dolci';
+
+        function selezionaCategoria(cat, element) {
+            // Rimuovi classe active da tutti
+            document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+            // Aggiungi a quello cliccato
+            element.classList.add('active');
+            categoriaCorrente = cat;
+            generaMessaggio();
+        }
+
+        function generaMessaggio() {
+            const lista = databaseMessaggi[categoriaCorrente];
+            const randomIndex = Math.floor(Math.random() * lista.length);
+            const testoScelto = lista[randomIndex];
+            
+            document.getElementById('messaggioBox').innerText = '" ' + testoScelto + ' "';
+            
+            // Aggiorna il link di WhatsApp
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(testoScelto)}`;
+            document.getElementById('whatsappBtn').href = whatsappUrl;
+        }
+
+        function copiaTesto() {
+            const testoDaCopiare = document.getElementById('messaggioBox').innerText.replace(/"/g, '').trim();
+            navigator.clipboard.writeText(testoDaCopiare).then(() => {
+                const notif = document.getElementById('notificaCopia');
+                notif.innerText = "✓ Messaggio copiato negli appunti!";
+                setTimeout(() => {
+                    notif.innerText = "";
+                }, 2500);
+            });
+        }
+
+        // Inizializza al caricamento
+        generaMessaggio();
+    </script>
+
+</body>
+</html>
