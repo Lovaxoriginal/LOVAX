@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubrica & Domanda del Giorno - LOVAX</title>
+    <meta name="description" content="Spunti di riflessione quotidiani e domande profonde per coltivare il dialogo e la complicità di coppia.">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf8f5;
+            color: #2c2c2c;
+            box-sizing: border-box;
+        }
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        /* Box della Domanda del Giorno */
+        .question-card {
+            background: #ffffff;
+            border: 2px solid #b89782;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .question-badge {
+            background: #b89782;
+            color: #fff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: #2c2c2c;
+            line-height: 1.4;
+            margin-bottom: 30px;
+        }
+        .btn-change {
+            background: #2c2c2c;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-change:hover {
+            background: #b89782;
+        }
+        /* Sezione Archivio Rubriche */
+        .archive-section {
+            margin-top: 50px;
+        }
+        .archive-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 4px solid #b89782;
+            padding-left: 12px;
+        }
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .archive-item {
+            background: #fff;
+            border: 1px solid #eae3dc;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .archive-item h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            color: #2c2c2c;
+        }
+        .archive-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Menu Unificato -->
+    <header class="site-header" style="background: #fff; padding: 15px 40px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="./logo-lovax.jpg" alt="Logo LOVAX" style="width: 36px; height: 36px; object-fit: cover; border-radius: 50%;">
+            <a href="index.html" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #2c2c2c; letter-spacing: 2px;">LOVAX</a>
+        </div>
+        <nav class="site-nav" style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <a href="index.html" style="text-decoration: none; color: #666; font-size: 15px;">Home</a>
+            <a href="test.html" style="text-decoration: none; color: #666; font-size: 15px;">Test</a>
+            <a href="rubrica.html" style="text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 15px;">Rubrica</a>
+            <a href="blog.html" style="text-decoration: none; color: #666; font-size: 15px;">Blog</a>
+            <a href="oracolo.html" style="text-decoration: none; color: #666; font-size: 15px;">Oracolo</a>
+            <a href="libri.html" style="text-decoration: none; color: #666; font-size: 15px;">Libri</a>
+            <a href="shop.html" style="text-decoration: none; color: #666; font-size: 15px;">Shop</a>
+            <a href="chisiamo.html" style="text-decoration: none; color: #666; font-size: 15px;">Chi siamo</a>
+            <a href="faq.html" style="text-decoration: none; color: #666; font-size: 15px;">FAQ</a>
+            <a href="contatti.html" style="text-decoration: none; color: #666; font-size: 15px;">Contatti</a>
+        </nav>
+    </header>
+
+    <!-- Contenuto Rubrica -->
+    <main class="main-container">
+        
+        <div class="page-header">
+            <h1>La Rubrica della Complicità</h1>
+            <p>Un appuntamento quotidiano con il dialogo autentico. Domande mirate per riscoprirsi, capirsi a fondo e rafforzare il legame.</p>
+        </div>
+
+        <!-- Box Interattivo Domanda del Giorno -->
+        <div class="question-card">
+            <span class="question-badge">✨ Domanda del Giorno</span>
+            <div class="question-text" id="domandaBox">
+                "Qual è stato il momento esatto in questa settimana in cui ti sei sentito/a più apprezzato/a da me?"
+            </div>
+            <button class="btn-change" onclick="cambiaDomanda()">💬 Estrai un'altra domanda</button>
+        </div>
+
+        <!-- Archivio / Consigli della Rubrica -->
+        <div class="archive-section">
+            <h3 class="archive-title">Temi Recenti della Rubrica</h3>
+            <div class="archive-grid">
+                <div class="archive-item">
+                    <h4>I Linguaggi dell'Affetto</h4>
+                    <p>Come esprimiamo l'amore senza usare le parole? Scopri l'importanza dei gesti silenziosi.</p>
+                </div>
+                <div class="archive-item">
+                    <h4>Futuro e Sogni Condivisi</h4>
+                    <p>Costruire progetti comuni mantenendo vivi gli spazi e le passioni individuali.</p>
+                </div>
+                <div class="archive-item">
+                    <h4>Superare i Piccoli Incompresi</h4>
+                    <p>Strategie di comunicazione non violenta per trasformare una discussione in un'occasione di crescita.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script interattivo per cambiare domanda al click -->
+    <script>
+        const domande = [
+            "Qual è stato il momento esatto in questa settimana in cui ti sei sentito/a più apprezzato/a da me?",
+            "C'è un sogno nel cassetto che non hai ancora realizzato e in cui vorresti il mio supporto al 100%?",
+            "Qual è il ricordo più bello del nostro primo anno insieme che ti fa ancora sorridere?",
+            "Se potessi pianificare una giornata perfetta solo per noi due, da dove inizieremmo?",
+            "Qual è una piccola abitudine che ho e che ti fa sentire al sicuro?",
+            "C'è qualcosa di nuovo che vorresti provassimo insieme nei prossimi mesi?",
+            "Qual è il complimento che ti piacerebbe sentirti dire più spesso?"
+        ];
+
+        function cambiaDomanda() {
+            const randomIndex = Math.floor(Math.random() * domande.length);
+            document.getElementById('domandaBox').innerText = '" ' + domande[randomIndex] + ' "';
+        }
+    </script>
+
+</body>
+</html>
