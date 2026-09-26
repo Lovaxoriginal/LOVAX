@@ -14,170 +14,185 @@
             margin: 0;
             padding: 0;
         }
-        .hero-section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
+        /* Layout a schermo pieno */
+        .hero-container {
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+            border-bottom: 1px solid #eae3dc;
         }
         .hero-logo {
-            width: 160px;
-            height: 160px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             border-radius: 50%;
-            box-shadow: 0 8px 25px rgba(0, 229, 255, 0.2);
-            margin-bottom: 20px;
-            border: 2px solid #eae3dc;
+            box-shadow: 0 12px 35px rgba(0, 229, 255, 0.25);
+            margin-bottom: 30px;
+            border: 3px solid #eae3dc;
+            transition: transform 0.4s ease;
         }
-        /* Box in evidenza Oracolo del giorno */
-        .daily-spotlight {
-            background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
-            color: #fff;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            flex-wrap: wrap;
-            gap: 20px;
+        .hero-logo:hover {
+            transform: scale(1.06);
         }
-        .spotlight-content {
-            max-width: 550px;
+        /* Sezione delle card a larghezza estesa */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 30px;
         }
-        .spotlight-btn {
-            background: #b89782;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: background 0.3s;
-            display: inline-block;
-        }
-        .spotlight-btn:hover {
-            background: #a3826e;
-        }
-        /* Griglia delle Sezioni */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-            text-align: left;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
         .feature-card {
             background: #ffffff;
             border: 1px solid #eae3dc;
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 20px;
+            padding: 40px 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            text-align: left;
         }
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
             border-color: #b89782;
+        }
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .feature-title {
+            font-size: 24px;
+            color: #2c2c2c;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .feature-desc {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
         .feature-btn {
             background: #2c2c2c;
             color: #fff;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
+            padding: 14px 24px;
+            border-radius: 10px;
             text-align: center;
             text-decoration: none;
-            margin-top: 25px;
-            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
             transition: background 0.3s;
+            display: block;
         }
         .feature-btn:hover {
             background: #b89782;
+        }
+        /* Banner Oracolo grande */
+        .banner-oracolo {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: #fff;
+            border-radius: 24px;
+            padding: 50px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Menu Completo con Shop -->
-    <header class="site-header" style="background: #fff; padding: 15px 30px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-            <img src="./logo-lovax.jpg" alt="Logo LOVAX" style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
-            <a href="index.html" style="text-decoration: none; font-size: 20px; font-weight: bold; color: #2c2c2c; letter-spacing: 2px;">LOVAX</a>
+    <!-- Header / Menu Completo -->
+    <header class="site-header" style="background: #fff; padding: 18px 40px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 1000;">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="./logo-lovax.jpg" alt="Logo LOVAX" style="width: 36px; height: 36px; object-fit: cover; border-radius: 50%;">
+            <a href="index.html" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #2c2c2c; letter-spacing: 2.5px;">LOVAX</a>
         </div>
-        <nav class="site-nav">
-            <a href="index.html" style="margin-left: 12px; text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 14px;">Home</a>
-            <a href="test.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">Test</a>
-            <a href="blog.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">Blog</a>
-            <a href="oracolo.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">Oracolo</a>
-            <a href="libri.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">Libri</a>
-            <a href="shop.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">Shop</a>
-            <a href="chisiamo.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">Chi siamo</a>
-            <a href="faq.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">FAQ</a>
-            <a href="contatti.html" style="margin-left: 12px; text-decoration: none; color: #666; font-size: 14px;">Contatti</a>
+        <nav class="site-nav" style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <a href="index.html" style="text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 15px;">Home</a>
+            <a href="test.html" style="text-decoration: none; color: #666; font-size: 15px;">Test</a>
+            <a href="blog.html" style="text-decoration: none; color: #666; font-size: 15px;">Blog</a>
+            <a href="oracolo.html" style="text-decoration: none; color: #666; font-size: 15px;">Oracolo</a>
+            <a href="libri.html" style="text-decoration: none; color: #666; font-size: 15px;">Libri</a>
+            <a href="shop.html" style="text-decoration: none; color: #666; font-size: 15px;">Shop</a>
+            <a href="chisiamo.html" style="text-decoration: none; color: #666; font-size: 15px;">Chi siamo</a>
+            <a href="faq.html" style="text-decoration: none; color: #666; font-size: 15px;">FAQ</a>
+            <a href="contatti.html" style="text-decoration: none; color: #666; font-size: 15px;">Contatti</a>
         </nav>
     </header>
 
-    <!-- Contenuto Principale / Hero Section -->
-    <main class="hero-section">
-        <img src="./logo-lovax.jpg" alt="LOVAX Logo Principale" class="hero-logo">
-        
-        <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #b89782; font-weight: 600;">Spazio Relazionale & Interattivo</span>
-        <h1 style="color: #2c2c2c; font-size: 38px; margin-top: 10px; font-weight: 700;">Coltiva la complicità della tua coppia</h1>
-        <p style="color: #666; font-size: 18px; line-height: 1.6; margin-top: 15px; max-width: 750px; margin-left: auto; margin-right: auto;">
-            LOVAX è la piattaforma d'eccellenza pensata per esplorare l'affinità profonda, migliorare la comunicazione quotidiana e riscoprire la bellezza di crescere insieme attraverso strumenti interattivi unici.
-        </p>
-
-        <!-- Box In Evidenza: Oracolo del Giorno -->
-        <div class="daily-spotlight">
-            <div class="spotlight-content">
-                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #b89782; font-weight: bold;">Spunto Quotidiano</span>
-                <h3 style="font-size: 22px; margin: 8px 0 12px 0;">Hai già consultato l'Oracolo oggi?</h3>
-                <p style="font-size: 14px; color: #d0d0d0; line-height: 1.5; margin-bottom: 0;">Lasciati ispirare da un pensiero di riflessione profonda o da un suggerimento di complicità da condividere con il partner.</p>
-            </div>
-            <div>
-                <a href="oracolo.html" class="spotlight-btn">Interroga l'Oracolo 🔮</a>
-            </div>
+    <!-- Sezione Hero a Schermo Pieno -->
+    <main>
+        <div class="hero-container">
+            <img src="./logo-lovax.jpg" alt="LOVAX Logo Principale" class="hero-logo">
+            
+            <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: #b89782; font-weight: 700; margin-bottom: 10px;">Spazio Relazionale & Interattivo</span>
+            <h1 style="color: #2c2c2c; font-size: 48px; margin: 0 0 20px 0; font-weight: 800; max-width: 900px; line-height: 1.2;">Coltiva la complicità della tua coppia</h1>
+            <p style="color: #555; font-size: 20px; line-height: 1.7; max-width: 800px; margin: 0;">
+                LOVAX è la piattaforma d'eccellenza pensata per esplorare l'affinità profonda, migliorare la comunicazione quotidiana e riscoprire la bellezza di crescere insieme.
+            </p>
         </div>
 
-        <!-- Griglia Ricca delle Sezioni della Piattaforma -->
-        <div class="features-grid">
-            <!-- Card Test -->
-            <div class="feature-card">
-                <div>
-                    <div style="font-size: 28px; margin-bottom: 12px;">📊</div>
-                    <h3 style="color: #2c2c2c; font-size: 18px; margin-bottom: 8px;">I Test di Coppia</h3>
-                    <p style="color: #666; font-size: 14px; line-height: 1.5;">Mettiti alla prova con percorsi interattivi da 10 domande su linguaggi dell'amore, sintonia e futuro.</p>
+        <!-- Contenuto Esteso con Card Grandi -->
+        <div class="content-wrapper">
+            <div class="features-grid">
+                <!-- Card Test -->
+                <div class="feature-card">
+                    <div>
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">I Test di Coppia</h3>
+                        <p class="feature-desc">Mettiti alla prova con percorsi interattivi completi da 10 domande su linguaggi dell'amore, sintonia e futuro condiviso.</p>
+                    </div>
+                    <a href="test.html" class="feature-btn">Fai i Test Interattivi</a>
                 </div>
-                <a href="test.html" class="feature-btn">Fai i Test</a>
+
+                <!-- Card Blog -->
+                <div class="feature-card">
+                    <div>
+                        <div class="feature-icon">💡</div>
+                        <h3 class="feature-title">Articoli & Guide</h3>
+                        <p class="feature-desc">Approfondimenti psicologici, idee e consigli pratici scritti appositamente per arricchire e custodire il vostro legame.</p>
+                    </div>
+                    <a href="blog.html" class="feature-btn">Leggi gli Articoli</a>
+                </div>
+
+                <!-- Card Shop -->
+                <div class="feature-card">
+                    <div>
+                        <div class="feature-icon">🎁</div>
+                        <h3 class="feature-title">Shop & Accessori</h3>
+                        <p class="feature-desc">Scopri la nostra esclusiva selezione di bracciali, collane e oggetti simbolici pensati per suggellare ogni momento speciale.</p>
+                    </div>
+                    <a href="shop.html" class="feature-btn">Visita lo Shop</a>
+                </div>
             </div>
 
-            <!-- Card Blog -->
-            <div class="feature-card">
-                <div>
-                    <div style="font-size: 28px; margin-bottom: 12px;">💡</div>
-                    <h3 style="color: #2c2c2c; font-size: 18px; margin-bottom: 8px;">Articoli & Idee</h3>
-                    <p style="color: #666; font-size: 14px; line-height: 1.5;">Approfondimenti psicologici e guide pratiche per arricchire la relazione e superare ogni attrito.</p>
+            <!-- Banner Oracolo Extra Large -->
+            <div class="banner-oracolo">
+                <div style="max-width: 600px;">
+                    <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #b89782; font-weight: bold;">Esperienza Esclusiva</span>
+                    <h2 style="font-size: 32px; margin: 10px 0 15px 0; font-weight: 700;">Interroga l'Oracolo di LOVAX</h2>
+                    <p style="font-size: 16px; color: #d0d0d0; line-height: 1.6; margin: 0;">Lasciati ispirare da un pensiero di riflessione profonda o da un suggerimento di complicità da condividere subito con il tuo partner.</p>
                 </div>
-                <a href="blog.html" class="feature-btn">Leggi il Blog</a>
-            </div>
-
-            <!-- Card Shop & Risorse -->
-            <div class="feature-card">
                 <div>
-                    <div style="font-size: 28px; margin-bottom: 12px;">🎁</div>
-                    <h3 style="color: #2c2c2c; font-size: 18px; margin-bottom: 8px;">Shop & Accessori</h3>
-                    <p style="color: #666; font-size: 14px; line-height: 1.5;">Scopri la nostra selezione di bracciali, collane e oggetti simbolici pensati per suggellare il vostro legame.</p>
+                    <a href="oracolo.html" style="background: #b89782; color: #fff; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 16px; display: inline-block; transition: background 0.3s;">Entra nell'Oracolo 🔮</a>
                 </div>
-                <a href="shop.html" class="feature-btn">Visita lo Shop</a>
             </div>
         </div>
     </main>
