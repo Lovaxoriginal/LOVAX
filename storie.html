@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storie di Coppia & Consigli - LOVAX</title>
+    <meta name="description" content="Leggi le storie, le esperienze e i consigli di altre coppie per superare la routine e far crescere il vostro legame.">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf8f5;
+            color: #2c2c2c;
+            box-sizing: border-box;
+        }
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        /* Card delle Storie */
+        .story-card {
+            background: #ffffff;
+            border: 1px solid #eae3dc;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: translateY(-3px);
+            border-color: #b89782;
+        }
+        .story-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #888;
+        }
+        .story-author {
+            font-weight: 700;
+            color: #b89782;
+        }
+        .story-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 12px;
+        }
+        .story-text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        /* Box Condividi la tua storia */
+        .share-box {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .share-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .share-box p {
+            color: #bbb;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+        .share-btn {
+            background: #b89782;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .share-btn:hover {
+            background: #c8a792;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Menu Unificato -->
+    <header class="site-header" style="background: #fff; padding: 15px 40px; border-bottom: 1px solid #eae3dc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="./logo-lovax.jpg" alt="Logo LOVAX" style="width: 36px; height: 36px; object-fit: cover; border-radius: 50%;">
+            <a href="index.html" style="text-decoration: none; font-size: 22px; font-weight: 800; color: #2c2c2c; letter-spacing: 2px;">LOVAX</a>
+        </div>
+        <nav class="site-nav" style="display: flex; flex-wrap: wrap; gap: 15px;">
+            <a href="index.html" style="text-decoration: none; color: #666; font-size: 15px;">Home</a>
+            <a href="test.html" style="text-decoration: none; color: #666; font-size: 15px;">Test</a>
+            <a href="rubrica.html" style="text-decoration: none; color: #666; font-size: 15px;">Rubrica</a>
+            <a href="minigiochi.html" style="text-decoration: none; color: #666; font-size: 15px;">Mini-Giochi</a>
+            <a href="messaggi.html" style="text-decoration: none; color: #666; font-size: 15px;">Messaggi</a>
+            <a href="storie.html" style="text-decoration: none; color: #2c2c2c; font-weight: bold; font-size: 15px;">Storie</a>
+            <a href="blog.html" style="text-decoration: none; color: #666; font-size: 15px;">Blog</a>
+            <a href="oracolo.html" style="text-decoration: none; color: #666; font-size: 15px;">Libri</a>
+            <a href="shop.html" style="text-decoration: none; color: #666; font-size: 15px;">Shop</a>
+            <a href="chisiamo.html" style="text-decoration: none; color: #666; font-size: 15px;">Chi siamo</a>
+            <a href="faq.html" style="text-decoration: none; color: #666; font-size: 15px;">FAQ</a>
+            <a href="contatti.html" style="text-decoration: none; color: #666; font-size: 15px;">Contatti</a>
+        </nav>
+    </header>
+
+    <!-- Contenuto Pagina Storie -->
+    <main class="main-container">
+        
+        <div class="page-header">
+            <h1>Storie & Consigli dalla Community</h1>
+            <p>Le esperienze reali di chi, giorno dopo giorno, sceglie di coltivare l'amore attraverso la comprensione, il dialogo e la cura dei piccoli dettagli.</p>
+        </div>
+
+        <!-- Lista delle Storie -->
+        <div class="story-card">
+            <div class="story-meta">
+                <span class="story-author">Marco & Elena (Insieme da 7 anni)</span>
+                <span>Tempo di lettura: 3 min</span>
+            </div>
+            <h2 class="story-title">"La regola dei 10 minuti senza telefoni la sera"</h2>
+            <p class="story-text">
+                "All'inizio eravamo sempre con lo smartphone in mano anche sul divano, finché non abbiamo deciso di spegnere tutto per soli 10 minuti appena rientrati a casa. È incredibile come quei pochi minuti di chiacchiera pura senza distrazioni abbiano cambiato totalmente la qualità delle nostre serate."
+            </p>
+        </div>
+
+        <div class="story-card">
+            <div class="story-meta">
+                <span class="story-author">Sara & Davide (Insieme da 3 anni)</span>
+                <span>Tempo di lettura: 2 min</span>
+            </div>
+            <h2 class="story-title">"I bigliettini nascosti nelle tasche dei cappotti"</h2>
+            <p class="story-text">
+                "Prima che lui partisse per una trasferta di lavoro di tre giorni, ho infilato di nascosto dei piccoli post-it con frasi ironiche e dolci nelle tasche dei suoi giubbotti. Mi ha detto che trovarli nei momenti di pausa gli ha svoltato la giornata. Da allora è diventato il nostro piccolo rito."
+            </p>
+        </div>
+
+        <div class="story-card">
+            <div class="story-meta">
+                <span class="story-author">Giorgio & Martina (Insieme da 12 anni)</span>
+                <span>Tempo di lettura: 4 min</span>
+            </div>
+            <h2 class="story-title">"Trasformare una discussione in un'occasione di ascolto"</h2>
+            <p class="story-text">
+                "Dopo anni passati ad alzare la voce per avere ragione, abbiamo capito che il segreto non è vincere il confronto, ma capire cosa spinge l'altro a sentirsi ferito. Quando abbiamo iniziato a dire 'Spiegami come ti senti' invece di 'Hai torto', tutto è diventato più semplice."
+            </p>
+        </div>
+
+        <!-- Box per inviare la propria storia -->
+        <div class="share-box">
+            <h3>Vuoi raccontare la tua storia o condividere un consiglio?</h3>
+            <p>Se hai un aneddoto carino o una regola d'oro che funziona nella tua relazione, scrivici! Potrebbe ispirare tantissime altre coppie.</p>
+            <button class="share-btn" onclick="inviaStoria()">Invia la tua storia 💌</button>
+        </div>
+
+    </main>
+
+    <!-- Script semplice per il pulsante di invio -->
+    <script>
+        function inviaStoria() {
+            const emailDestinatario = "tuaemail@gmail.com"; // Puoi cambiarla con la tua mail
+            window.location.href = `mailto:${emailDestinatario}?subject=La mia storia di coppia per LOVAX&body=Ciao! Vorrei condividere questa storia/consiglio per la community di LOVAX:%0D%0A%0D%0A[Scrivi qui la tua storia]`;
+        }
+    </script>
+
+</body>
+</html>
