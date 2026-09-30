@@ -14,72 +14,66 @@
             padding: 0;
         }
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         .back-link {
             display: inline-block;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: #888;
             text-decoration: none;
         }
-        .product-section {
-            display: flex;
-            flex-wrap: wrap;
+        .product-card {
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             overflow: hidden;
-            margin-bottom: 60px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
         }
-        .product-image-wrapper {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* Immagine molto più grande */
-            padding: 40px; /* Spazio attorno all'immagine */
+        /* Immagine grande e centrata sopra tutto */
+        .product-image-container {
+            width: 100%;
+            margin-bottom: 30px;
         }
-        .product-image-wrapper img {
-            max-width: 90%; /* Quasi tutta la larghezza del wrapper */
-            max-height: 600px; /* Limite di altezza per non esagerare su schermi grandi */
+        .product-image-container img {
+            width: 100%;
+            max-width: 650px;
             height: auto;
-            object-fit: contain;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .product-details {
-            flex: 2;
-            min-width: 300px;
-            padding: 60px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         h1 {
-            font-size: 3.5em;
+            font-size: 2.8em;
             margin-bottom: 10px;
             color: #222;
         }
         .subtitle {
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .description {
             font-size: 1.1em;
             color: #555;
             margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .price-section {
             display: flex;
             gap: 30px;
             flex-wrap: wrap;
+            justify-content: center;
+            text-align: left;
         }
         .price-box {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
+            max-width: 400px;
             border: 2px solid #e0e0e0;
             border-radius: 12px;
             padding: 30px;
@@ -103,12 +97,12 @@
             font-weight: bold;
         }
         .version-title {
-            font-size: 1.6em;
+            font-size: 1.5em;
             font-weight: bold;
             margin-bottom: 10px;
         }
         .price-tag {
-            font-size: 3em;
+            font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -132,7 +126,7 @@
             margin-top: 20px;
         }
         .paypal-field-label {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #666;
             margin-bottom: 5px;
             display: block;
@@ -145,21 +139,6 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        /* Regole per dispositivi mobili */
-        @media (max-width: 768px) {
-            .product-section {
-                flex-direction: column;
-            }
-            .product-image-wrapper img {
-                max-height: 400px; /* Leggermente più piccola su mobile */
-            }
-            .product-details, .product-image-wrapper {
-                padding: 30px;
-            }
-            h1 {
-                font-size: 2.5em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -167,38 +146,35 @@
     <div class="container">
         <a href="index.html" class="back-link">← Torna alla Home</a>
 
-        <article class="product-section">
+        <div class="product-card">
             
-            <!-- Colonna Immagine -->
-            <div class="product-image-wrapper">
-                
+            <!-- Immagine grande in primo piano -->
+            <div class="product-image-container">
                 <img src="seme-amore.png" alt="Kit Il Seme dell'Amore">
             </div>
 
-            <!-- Colonna Dettagli -->
-            <div class="product-details">
-                <h1>Il Seme dell'Amore</h1>
-                <p class="subtitle">Coltiva la complicità e custodisci la promessa della vostra storia.</p>
-                <p class="description">
-                    Un piccolo gesto che cresce nel tempo. Il kit <strong>LOVAX</strong> è pensato per le coppie che desiderano unire simbolismo ed emozione. 
-                    Scegli la versione che preferisci tra la Standard e la Premium con personalizzazioni: riceverai tutto l'occorrente direttamente a casa tua con spedizione gratuita inclusa.
-                </p>
+            <h1>Il Seme dell'Amore</h1>
+            <p class="subtitle">Coltiva la complicità e custodisci la promessa della vostra storia.</p>
+            <p class="description">
+                Un piccolo gesto che cresce nel tempo. Il kit <strong>LOVAX</strong> è pensato per le coppie che desiderano unire simbolismo ed emozione. 
+                Scegli la versione che preferisci tra la Standard e la Premium con personalizzazioni: riceverai tutto l'occorrente direttamente a casa tua con spedizione gratuita inclusa.
+            </p>
 
-                <div class="price-section">
-                    <!-- Versione Standard -->
-                    <div class="price-box">
-                        <h2 class="version-title">Versione Standard</h2>
-                        <p class="price-tag">€9,99</p>
-                        <ul class="feature-list">
-                            <li>Kit completo "Il Seme dell'Amore"</li>
-                            <li>Packaging esclusivo LOVAX</li>
-                            <li>Spedizione Gratuita inclusa</li>
-                        </ul>
-                        <div class="paypal-form-container">
-                            <label class="paypal-field-label">Indirizzo di spedizione completo (Spedizione Gratuita)</label>
-                            <input type="text" name="custom" class="paypal-input" placeholder="Es. Via Roma 1, 20100 Milano">
-                            
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <div class="price-section">
+                <!-- Versione Standard -->
+                <div class="price-box">
+                    <h2 class="version-title">Versione Standard</h2>
+                    <p class="price-tag">€9,99</p>
+                    <ul class="feature-list">
+                        <li>Kit completo "Il Seme dell'Amore"</li>
+                        <li>Packaging esclusivo LOVAX</li>
+                        <li>Spedizione Gratuita inclusa</li>
+                    </ul>
+                    <div class="paypal-form-container">
+                        <label class="paypal-field-label">Indirizzo di spedizione completo (Spedizione Gratuita)</label>
+                        <input type="text" name="custom" class="paypal-input" placeholder="Es. Via Roma 1, 20100 Milano">
+                        
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="4YGJD7QBPDQGQ" />
   <table>
@@ -217,32 +193,31 @@
   <input type="hidden" name="currency_code" value="EUR" />
   <input type="image" src="https://www.paypalobjects.com/it_IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal, il metodo semplice e sicuro per pagare online" alt="Acquista ora" />
 </form>
-
-                        </div>
                     </div>
+                </div>
 
-                    <!-- Versione Premium -->
-                    <div class="price-box featured">
-                        <h2 class="version-title">Versione Premium</h2>
-                        <p class="price-tag">€14,99</p>
-                        <ul class="feature-list">
-                            <li>Tutti i vantaggi della versione Standard</li>
-                            <li>Personalizzazione con Indirizzo e Dedica/Link</li>
-                            <li><strong>Colonna sonora all'apertura del sito</strong></li>
-                            <li><strong>Messaggio personalizzato per il destinatario</strong></li>
-                            <li>Spedizione Gratuita inclusa</li>
-                        </ul>
-                        <div class="paypal-form-container">
-                            <label class="paypal-field-label">Indirizzo di spedizione completo (Spedizione Gratuita)</label>
-                            <input type="text" name="custom" class="paypal-input" placeholder="Es. Via Roma 1, 20100 Milano">
-                            
-                            <label class="paypal-field-label">Messaggio personalizzato (per il destinatario)</label>
-                            <textarea name="os0" class="paypal-input" rows="3" placeholder="Es. 'Buon anniversario amore mio!'"></textarea>
-                            
-                            <label class="paypal-field-label">Link Colonna Sonora (es. YouTube, Spotify)</label>
-                            <input type="text" name="os1" class="paypal-input" placeholder="Es. https://youtu.be/...">
+                <!-- Versione Premium -->
+                <div class="price-box featured">
+                    <h2 class="version-title">Versione Premium</h2>
+                    <p class="price-tag">€14,99</p>
+                    <ul class="feature-list">
+                        <li>Tutti i vantaggi della versione Standard</li>
+                        <li>Personalizzazione con Indirizzo e Dedica/Link</li>
+                        <li><strong>Colonna sonora all'apertura del sito</strong></li>
+                        <li><strong>Messaggio personalizzato per il destinatario</strong></li>
+                        <li>Spedizione Gratuita inclusa</li>
+                    </ul>
+                    <div class="paypal-form-container">
+                        <label class="paypal-field-label">Indirizzo di spedizione completo (Spedizione Gratuita)</label>
+                        <input type="text" name="custom" class="paypal-input" placeholder="Es. Via Roma 1, 20100 Milano">
+                        
+                        <label class="paypal-field-label">Messaggio personalizzato (per il destinatario)</label>
+                        <textarea name="os0" class="paypal-input" rows="3" placeholder="Es. 'Buon anniversario amore mio!'"></textarea>
+                        
+                        <label class="paypal-field-label">Link Colonna Sonora (es. YouTube, Spotify)</label>
+                        <input type="text" name="os1" class="paypal-input" placeholder="Es. https://youtu.be/...">
 
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="432798NTH52WU" />
   <table>
@@ -261,11 +236,11 @@
   <input type="hidden" name="currency_code" value="EUR" />
   <input type="image" src="https://www.paypalobjects.com/it_IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal, il metodo semplice e sicuro per pagare online" alt="Acquista ora" />
 </form>
-                        </div>
                     </div>
                 </div>
             </div>
-        </article>
+
+        </div>
     </div>
 
 </body>
