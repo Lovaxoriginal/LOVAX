@@ -3,215 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOVAX - Il Seme dell'Amore</title>
+    <title>Il Seme dell'Amore - LOVAX</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #faf9f6;
-            color: #2c2c2c;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #ffffff;
-            padding: 20px 40px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-decoration: none;
-            color: #2c2c2c;
-        }
         .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        .product-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-        }
-        h1 {
-            font-size: 36px;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        .description {
-            line-height: 1.8;
-            margin-bottom: 40px;
-            color: #444;
-            font-size: 16px;
-            text-align: center;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .price-box {
-            background: #fdfdfd;
-            border: 2px solid #eaeaea;
-            border-radius: 12px;
-            padding: 35px 30px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s ease;
-        }
-        .price-box.featured {
-            border-color: #8c7853;
-            background: #fffdf9;
-        }
-        .price-box h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #222;
-        }
-        .price {
-            font-size: 32px;
-            font-weight: bold;
-            color: #8c7853;
-            margin-bottom: 25px;
-        }
-        .price-box ul {
-            text-align: left;
-            padding-left: 20px;
-            margin-bottom: 30px;
-            color: #555;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-        .price-box ul li {
-            margin-bottom: 10px;
-        }
-        .paypal-container {
-            margin-top: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
         .back-link {
             display: inline-block;
-            margin-bottom: 30px;
-            color: #666;
+            margin-bottom: 40px;
+            color: #888;
             text-decoration: none;
-            font-size: 14px;
         }
-        .back-link:hover {
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+        .product-image-wrapper {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Immagine molto più grande */
+            padding: 40px; /* Spazio attorno all'immagine */
+        }
+        .product-image-wrapper img {
+            max-width: 90%; /* Quasi tutta la larghezza del wrapper */
+            max-height: 600px; /* Limite di altezza per non esagerare su schermi grandi */
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-details {
+            flex: 2;
+            min-width: 300px;
+            padding: 60px;
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
             color: #222;
+        }
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .description {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .price-section {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .price-box {
+            flex: 1;
+            min-width: 250px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            background-color: #fafafa;
+        }
+        .price-box.featured {
+            border-color: #3b3;
+            background-color: #f0fff0;
+            position: relative;
+        }
+        .price-box.featured::after {
+            content: 'CONSIGLIATO';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: #3b3;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .version-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .price-tag {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #3b3;
+        }
+        .paypal-form-container {
+            margin-top: 20px;
+        }
+        .paypal-field-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .paypal-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* Regole per dispositivi mobili */
+        @media (max-width: 768px) {
+            .product-section {
+                flex-direction: column;
+            }
+            .product-image-wrapper img {
+                max-height: 400px; /* Leggermente più piccola su mobile */
+            }
+            .product-details, .product-image-wrapper {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo">LOVAX</a>
-    </header>
-
     <div class="container">
-        <a href="index.html" class="back-link">&larr; Torna alla Home</a>
-        
-        <div class="product-card">
-            <h1>Il Seme dell'Amore</h1>
-            <div class="subtitle">Coltiva la complicità e custodisci la promessa della vostra storia</div>
+        <a href="index.html" class="back-link">← Torna alla Home</a>
+
+        <article class="product-section">
             
-            <div class="description">
-                <p>Un piccolo gesto che cresce nel tempo. Il kit <strong>LOVAX</strong> è pensato per le coppie che desiderano unire simbolismo ed emozione. Scegli la versione che preferisci tra la Standard e la Premium con personalizzazione: riceverai tutto l'occorrente direttamente a casa tua con spedizione gratuita inclusa.</p>
+            <!-- Colonna Immagine -->
+            <div class="product-image-wrapper">
+                <!-- METTI QUI IL LINK DELLA TUA FOTO GRANDE -->
+                <img src="TUO_LINK_FOTO_KIT_GRANDE.jpg" alt="Kit Il Seme dell'Amore">
             </div>
 
-            <div class="pricing-grid">
-                <!-- VERSIONE STANDARD -->
-                <div class="price-box">
-                    <div>
-                        <h3>Versione Standard</h3>
-                        <div class="price">€9,99</div>
-                        <ul>
+            <!-- Colonna Dettagli -->
+            <div class="product-details">
+                <h1>Il Seme dell'Amore</h1>
+                <p class="subtitle">Coltiva la complicità e custodisci la promessa della vostra storia.</p>
+                <p class="description">
+                    Un piccolo gesto che cresce nel tempo. Il kit <strong>LOVAX</strong> è pensato per le coppie che desiderano unire simbolismo ed emozione. 
+                    Scegli la versione che preferisci tra la Standard e la Premium con personalizzazioni: riceverai tutto l'occorrente direttamente a casa tua con spedizione gratuita inclusa.
+                </p>
+
+                <div class="price-section">
+                    <!-- Versione Standard -->
+                    <div class="price-box">
+                        <h2 class="version-title">Versione Standard</h2>
+                        <p class="price-tag">€9,99</p>
+                        <ul class="feature-list">
                             <li>Kit completo "Il Seme dell'Amore"</li>
                             <li>Packaging esclusivo LOVAX</li>
                             <li>Spedizione Gratuita inclusa</li>
                         </ul>
-                    </div>
-                    <div class="paypal-container">
-                       
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <input type="hidden" name="cmd" value="_s-xclick" />
-  <input type="hidden" name="hosted_button_id" value="4YGJD7QBPDQGQ" />
-  <table>
-    <tr>
-      <td>
-        <input type="hidden" name="on0" value="Indirizzo di spedizione completo (Spedizione Gratuita)"/>
-        Indirizzo di spedizione completo (Spedizione Gratuita)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="text" name="os0" maxLength="200" />
-      </td>
-    </tr>
-  </table>
-  <input type="hidden" name="currency_code" value="EUR" />
-  <input type="image" src="https://www.paypalobjects.com/it_IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal, il metodo semplice e sicuro per pagare online" alt="Acquista ora" />
-</form></p>
-                    </div>
-                </div>
+                        <div class="paypal-form-container">
+                            <label class="paypal-field-label">Indirizzo di spedizione completo (Spedizione Gratuita)</label>
+                            <input type="text" name="custom" class="paypal-input" placeholder="Es. Via Roma 1, 20100 Milano">
+                            
+                            <!-- INCOLLA QUI IL CODICE DEL PULSANTE STANDARD -->
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="TUO_ID_PULSANTE_STANDARD">
+                                <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - Il metodo semplice e sicuro per pagare online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                            </form>
 
-                <!-- VERSIONE PREMIUM -->
-                <div class="price-box featured">
-                    <div>
-                        <h3>Versione Premium</h3>
-                        <div class="price">€14,99</div>
-                        <ul>
+                        </div>
+                    </div>
+
+                    <!-- Versione Premium -->
+                    <div class="price-box featured">
+                        <h2 class="version-title">Versione Premium</h2>
+                        <p class="price-tag">€14,99</p>
+                        <ul class="feature-list">
                             <li>Tutti i vantaggi della versione Standard</li>
                             <li>Personalizzazione con Indirizzo e Dedica/Link</li>
+                            <li><strong>Colonna sonora all'apertura del sito</strong></li>
+                            <li><strong>Messaggio personalizzato per il destinatario</strong></li>
                             <li>Spedizione Gratuita inclusa</li>
                         </ul>
-                    </div>
-                    <div class="paypal-container">
-                        
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <input type="hidden" name="cmd" value="_s-xclick" />
-  <input type="hidden" name="hosted_button_id" value="432798NTH52WU" />
-  <table>
-    <tr>
-      <td>
-        <input type="hidden" name="on0" value="Indirizzo di spedizione completo (Spedizione Gratuita)"/>
-        Indirizzo di spedizione completo (Spedizione Gratuita)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="text" name="os0" maxLength="200" />
-      </td>
-    </tr>
-  </table>
-  <input type="hidden" name="currency_code" value="EUR" />
-  <input type="image" src="https://www.paypalobjects.com/it_IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal, il metodo semplice e sicuro per pagare online" alt="Acquista ora" />
-</form>
+                        <div class="paypal-form-container">
+                            <label class="paypal-field-label">Indirizzo di spedizione completo (Spedizione Gratuita)</label>
+                            <input type="text" name="custom" class="paypal-input" placeholder="Es. Via Roma 1, 20100 Milano">
+                            
+                            <label class="paypal-field-label">Messaggio personalizzato (per il destinatario)</label>
+                            <textarea name="os0" class="paypal-input" rows="3" placeholder="Es. 'Buon anniversario amore mio!'"></textarea>
+                            
+                            <label class="paypal-field-label">Link Colonna Sonora (es. YouTube, Spotify)</label>
+                            <input type="text" name="os1" class="paypal-input" placeholder="Es. https://youtu.be/...">
+
+                            <!-- INCOLLA QUI IL CODICE DEL PULSANTE PREMIUM -->
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="TUO_ID_PULSANTE_PREMIUM">
+                                <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - Il metodo semplice e sicuro per pagare online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     </div>
 
 </body>
