@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVAX - Il Seme dell'Amore</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf9f6;
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: #2c2c2c;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+        h1 {
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .description {
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: #444;
+            font-size: 16px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .price-box {
+            background: #fdfdfd;
+            border: 2px solid #eaeaea;
+            border-radius: 12px;
+            padding: 35px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        .price-box.featured {
+            border-color: #8c7853;
+            background: #fffdf9;
+        }
+        .price-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #8c7853;
+            margin-bottom: 25px;
+        }
+        .price-box ul {
+            text-align: left;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .price-box ul li {
+            margin-bottom: 10px;
+        }
+        .paypal-container {
+            margin-top: auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">LOVAX</a>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Torna alla Home</a>
+        
+        <div class="product-card">
+            <h1>Il Seme dell'Amore</h1>
+            <div class="subtitle">Coltiva la complicità e custodisci la promessa della vostra storia</div>
+            
+            <div class="description">
+                <p>Un piccolo gesto che cresce nel tempo. Il kit <strong>LOVAX</strong> è pensato per le coppie che desiderano unire simbolismo ed emozione. Scegli la versione che preferisci tra la Standard e la Premium con personalizzazione: riceverai tutto l'occorrente direttamente a casa tua con spedizione gratuita inclusa.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- VERSIONE STANDARD -->
+                <div class="price-box">
+                    <div>
+                        <h3>Versione Standard</h3>
+                        <div class="price">€9,99</div>
+                        <ul>
+                            <li>Kit completo "Il Seme dell'Amore"</li>
+                            <li>Packaging esclusivo LOVAX</li>
+                            <li>Spedizione Gratuita inclusa</li>
+                        </ul>
+                    </div>
+                    <div class="paypal-container">
+                       
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="4YGJD7QBPDQGQ" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="Indirizzo di spedizione completo (Spedizione Gratuita)"/>
+        Indirizzo di spedizione completo (Spedizione Gratuita)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os0" maxLength="200" />
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="EUR" />
+  <input type="image" src="https://www.paypalobjects.com/it_IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal, il metodo semplice e sicuro per pagare online" alt="Acquista ora" />
+</form></p>
+                    </div>
+                </div>
+
+                <!-- VERSIONE PREMIUM -->
+                <div class="price-box featured">
+                    <div>
+                        <h3>Versione Premium</h3>
+                        <div class="price">€14,99</div>
+                        <ul>
+                            <li>Tutti i vantaggi della versione Standard</li>
+                            <li>Personalizzazione con Indirizzo e Dedica/Link</li>
+                            <li>Spedizione Gratuita inclusa</li>
+                        </ul>
+                    </div>
+                    <div class="paypal-container">
+                        
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="432798NTH52WU" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="Indirizzo di spedizione completo (Spedizione Gratuita)"/>
+        Indirizzo di spedizione completo (Spedizione Gratuita)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os0" maxLength="200" />
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="EUR" />
+  <input type="image" src="https://www.paypalobjects.com/it_IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal, il metodo semplice e sicuro per pagare online" alt="Acquista ora" />
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
