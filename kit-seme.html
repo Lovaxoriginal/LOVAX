@@ -33,7 +33,6 @@
             margin-bottom: 40px;
             text-align: center;
         }
-        /* Immagine grande e centrata sopra tutto */
         .product-image-container {
             width: 100%;
             margin-bottom: 30px;
@@ -59,9 +58,10 @@
             font-size: 1.1em;
             color: #555;
             margin-bottom: 40px;
-            max-width: 700px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
+            text-align: left;
         }
         .price-section {
             display: flex;
@@ -112,7 +112,7 @@
             margin-bottom: 30px;
         }
         .feature-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             padding-left: 25px;
             position: relative;
         }
@@ -121,6 +121,7 @@
             position: absolute;
             left: 0;
             color: #3b3;
+            font-weight: bold;
         }
         .paypal-form-container {
             margin-top: 20px;
@@ -130,6 +131,7 @@
             color: #666;
             margin-bottom: 5px;
             display: block;
+            font-weight: bold;
         }
         .paypal-input {
             width: 100%;
@@ -148,17 +150,17 @@
 
         <div class="product-card">
             
-            <!-- Immagine grande in primo piano -->
+            <!-- Immagine grande del kit -->
             <div class="product-image-container">
-                <img src="seme-amore.png" alt="Kit Il Seme dell'Amore">
+                <img src="watermarked_img_581149005383556229.jpg" alt="Kit Il Seme dell'Amore">
             </div>
 
             <h1>Il Seme dell'Amore</h1>
             <p class="subtitle">Coltiva la complicità e custodisci la promessa della vostra storia.</p>
-            <p class="description">
-                Un piccolo gesto che cresce nel tempo. Il kit <strong>LOVAX</strong> è pensato per le coppie che desiderano unire simbolismo ed emozione. 
-                Scegli la versione che preferisci tra la Standard e la Premium con personalizzazioni: riceverai tutto l'occorrente direttamente a casa tua con spedizione gratuita inclusa.
-            </p>
+            <div class="description">
+                <p>Un piccolo gesto che cresce nel tempo. Il kit <strong>LOVAX</strong> è pensato per le coppie che desiderano unire simbolismo ed emozione.</p>
+                <p>Con la <strong>Versione Premium</strong> potrai rendere questo dono assolutamente unico: inserendo un messaggio speciale e la tua canzone del cuore, creeremo una <strong>pagina web personalizzata dedicata a voi</strong>, accessibile in qualsiasi momento semplicemente <strong>scansionando il codice QR</strong> che troverai all'interno del kit.</p>
+            </div>
 
             <div class="price-section">
                 <!-- Versione Standard -->
@@ -179,6 +181,10 @@
   <input type="hidden" name="hosted_button_id" value="4YGJD7QBPDQGQ" />
   <table>
     <tr>
+      <td>
+        <input type="hidden" name="on0" value="Indirizzo di spedizione completo (Spedizione Gratuita)"/>
+        Indirizzo di spedizione completo (Spedizione Gratuita)
+      </td>
     </tr>
     <tr>
       <td>
@@ -198,9 +204,9 @@
                     <p class="price-tag">€14,99</p>
                     <ul class="feature-list">
                         <li>Tutti i vantaggi della versione Standard</li>
-                        <li>Personalizzazione con Indirizzo e Dedica/Link</li>
-                        <li><strong>Colonna sonora all'apertura del sito</strong></li>
-                        <li><strong>Messaggio personalizzato per il destinatario</strong></li>
+                        <li><strong>Pagina personalizzata dedicata</strong> (tramite QR Code nel kit)</li>
+                        <li><strong>Messaggio d'amore personalizzato</strong> per il partner</li>
+                        <li><strong>Colonna sonora musicale</strong> all'apertura della pagina</li>
                         <li>Spedizione Gratuita inclusa</li>
                     </ul>
                     <div class="paypal-form-container">
@@ -208,17 +214,19 @@
                         <input type="text" name="custom" class="paypal-input" placeholder="Es. Via Roma 1, 20100 Milano">
                         
                         <label class="paypal-field-label">Messaggio personalizzato (per il destinatario)</label>
-                        <textarea name="os0" class="paypal-input" rows="3" placeholder="Es. 'Buon anniversario amore mio!'"></textarea>
+                        <textarea name="os0" class="paypal-input" rows="3" placeholder="Es. 'Buon anniversario amore mio, ti amo!'"></textarea>
                         
                         <label class="paypal-field-label">Link Colonna Sonora (es. YouTube, Spotify)</label>
-                        <input type="text" name="os1" class="paypal-input" placeholder="Es. https://youtu.be/...">
+                        <input type="text" name="os1" class="paypal-input" placeholder="Es. https://youtu.be/..."></input>
 
-                       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="432798NTH52WU" />
   <table>
     <tr>
       <td>
+        <input type="hidden" name="on0" value="Indirizzo di spedizione completo (Spedizione Gratuita)"/>
+        Indirizzo di spedizione completo (Spedizione Gratuita)
       </td>
     </tr>
     <tr>
